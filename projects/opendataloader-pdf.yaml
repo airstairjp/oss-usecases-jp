@@ -1,0 +1,31 @@
+slug: opendataloader-pdf
+name: OpenDataLoader PDF
+repo: opendataloader-project/opendataloader-pdf
+homepage: https://opendataloader.org
+category: docs
+uses:
+- docs
+- rag
+tagline: PDFをMarkdown／JSON／HTMLに変え、アクセシビリティ用のタグ付けもできるパーサ
+what: PDFから構造化Markdownや位置情報つきJSONを抽出するオープンソース。ベンチマーク上位を主張し、OCRや表・数式対応のハイブリッドモード、Tagged PDF生成（アクセシビリティ）まで手がける。RAG前処理向き。
+goodFor:
+- PDFのRAG前処理
+- 大量PDFの自動タグ付け
+ease:
+  level: 4
+  text: pip で入れ、数行で変換できる。複雑ページはハイブリッドモード。
+  install: pip install opendataloader-pdf
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-02）'
+  url: https://x.com/so_ainsight/status/2061646542419923416
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 29730
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-18

@@ -1,0 +1,41 @@
+slug: librechat
+name: LibreChat
+repo: LibreChat-AI/LibreChat
+homepage: https://librechat.ai/
+category: ai-app
+uses:
+- internal-ai
+- rag
+- self-host
+tagline: 複数モデルを一つの画面で使える、自己ホスト向けの高機能AIチャットUI
+what: ChatGPT風のWeb UIに、エージェント、MCP、ファイル添付、モデル切替、権限管理などを足したオープンソース。大学や企業の学内／社内AI窓口としてカスタマイズして使われることが多い。
+goodFor:
+- 学内・社内向けの共通AIチャット基盤
+- 複数ベンダーのモデルを従業員に解放する
+cases:
+- title: UMass Amherstが、学内向けGenAI基盤の土台に採用
+  summary: マサチューセッツ大学アマースト校ITがLibreChatを改修し、SSOや管理機能を足した学内向けAI画面を構築。3万人規模の利用を想定し、他大学への展開も進めていると説明している。
+  source:
+    name: UMass Amherst IT 公式記事（英語）
+    url: https://www.umass.edu/it/news/inside-umass-genai-platform-campus-built-approach-ai
+- title: コロンビア大学が、LibreChatベースのCHATを学内展開
+  summary: Columbia University ITがLibreChatをCHATとして再ブランドし、教職員向けに複数モデルへの安全なアクセスを提供。セキュリティ審査済みのモデルのみを載せ、従量課金で運用していると紹介している。
+  source:
+    name: Columbia University CUIT（英語）
+    url: https://etc.cuit.columbia.edu/news/aicop-introducing-chat-cuit-hosted-ai-toolkit
+ease:
+  level: 3
+  text: Docker Composeでの起動が一般的。SSOやモデル鍵の設定は組織ごとに必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-30）'
+  url: https://x.com/so_ainsight/status/2049684937574608975
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 45859
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

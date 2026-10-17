@@ -1,0 +1,32 @@
+slug: rea
+name: REA
+repo: morluto/rea
+homepage: https://rea.tools
+category: dev
+uses:
+- coding
+- agent
+tagline: アプリやバイナリの仕組みを、ソースがなくてもエージェントに調べさせるリバースエンジニアリングMCP
+what: ソースコードがないアプリやネイティブバイナリの挙動を、エージェントから調べるためのMCPツール一式。JavaScript／Electron、.NET、Webサイトの静的解析に加え、Hopper・Ghidra・IDAなどと連携してネイティブ解析もできる。気になる機能の作り方を証拠つきで説明させ、自分のプロジェクト向けに再実装する流れを想定している。
+goodFor:
+- 競合アプリの機能の仕組みを調査する
+- バイナリやElectronアプリの挙動解析
+- エージェントにリバース作業を任せる
+ease:
+  level: 3
+  text: npx でセットアップでき、対応するエージェントに登録する。ネイティブ解析はHopper／Ghidra／IDAのいずれかがあると本領を発揮する。
+  install: npx rea-agents setup
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-10-15）'
+  url: https://x.com/so_ainsight/status/2110568864115560471
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 301973
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

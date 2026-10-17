@@ -1,0 +1,41 @@
+slug: langchain
+name: LangChain
+repo: langchain-ai/langchain
+homepage: https://docs.langchain.com/langchain/
+category: ai-app
+uses:
+- agent
+- rag
+tagline: LLMアプリとエージェントを、部品をつないで組み立てるためのフレームワーク
+what: モデル呼び出し、ツール、検索、メモリなどを共通のインターフェースでつなぎ、LLMアプリやエージェントを組み立てるPythonフレームワーク。LangGraph（状態を持つワークフロー）、LangSmith（観測・評価）など周辺製品と連携しやすい。JavaScript版もある。
+goodFor:
+- 社内向けAIエージェントやRAGの試作〜本番
+- 複数モデル・ツールを差し替え可能な設計
+cases:
+- title: メディア企業Bertelsmannが、社内コンテンツ検索をマルチエージェント化
+  summary: BertelsmannのAI HubがLangGraphで社内向けコンテンツ検索を構築し、試作から本番へ。複数領域の専門エージェントを組み合わせ、クリエイティブ部門の発見を支援していると公式事例で紹介されている。
+  source:
+    name: LangChain公式 導入事例（英語）
+    url: https://www.langchain.com/blog/customer-bertelsmann
+- title: VC向けスタートアップ発見のHarmonicが、投資調査エージェントを構築
+  summary: HarmonicがLangGraphとLangSmithで投資調査エージェントを構築。関連検索の成果が約30%増え、価値を感じるまでの時間が数時間から1分未満になったと報告している。
+  source:
+    name: LangChain公式 導入事例（英語）
+    url: https://www.langchain.com/blog/customers-harmonic
+ease:
+  level: 3
+  text: pip で入れればすぐ試せる。本番ではLangGraphや観測（LangSmith）の設計が必要になることが多い。
+  install: pip install langchain
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-27）'
+  url: https://x.com/so_ainsight/status/2048597772111331467
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 147980
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

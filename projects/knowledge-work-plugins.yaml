@@ -1,0 +1,30 @@
+slug: knowledge-work-plugins
+name: Knowledge Work Plugins
+repo: anthropics/knowledge-work-plugins
+category: dev
+uses:
+- automation
+- writing
+tagline: 営業・サポート・PMなど職種別の仕事の進め方を、Claudeに教えるAnthropic公式プラグイン
+what: Anthropicが公開するナレッジワーカー向けプラグイン集。営業の準備、サポートのトリアージ、プロダクト仕様、生産性など職能ごとにスキル・コネクタ・スラッシュコマンドを束ね、Claude Cowork／Claude
+  Code向けに提供する。
+goodFor:
+- 職種別の定型業務をClaudeに任せ始める
+- 社内向けにプラグインをカスタマイズする土台
+ease:
+  level: 5
+  text: Claudeのプラグイン機構に追加する。コネクタは利用サービスに応じて設定。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-24）'
+  url: https://x.com/so_ainsight/status/2058687059943203225
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 29954
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

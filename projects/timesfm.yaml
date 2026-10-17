@@ -1,0 +1,30 @@
+slug: timesfm
+name: TimesFM
+repo: google-research/timesfm
+homepage: https://research.google/blog/a-decoder-only-foundation-model-for-time-series-forecasting/
+category: dev
+uses:
+- coding
+- automation
+tagline: 追加学習なしで時系列予測できる、Google Researchの基盤モデル
+what: デコーダ専用の時系列基盤モデル。ゼロショットで予測でき、3.0では多変量や共変量にも対応。BigQuery MLやSheets、Vertexからも使える。研究コードとチェックポイントが公開されている。
+goodFor:
+- 需要予測や指標のゼロショット予測実験
+- 既存BIへの時系列FM組み込み
+ease:
+  level: 3
+  text: PyTorchチェックポイントを読み込むか、Google Cloudのマネージド機能を使う。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-13）'
+  url: https://x.com/so_ainsight/status/2043630378888634459
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 34562
+  pushedAt: 2026-09-30
+  fetchedAt: 2026-10-18

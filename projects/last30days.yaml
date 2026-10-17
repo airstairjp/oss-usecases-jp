@@ -1,0 +1,29 @@
+slug: last30days
+name: last30days
+repo: mvanhorn/last30days-skill
+category: web-data
+uses:
+- scraping
+- agent
+tagline: Reddit・X・YouTubeなどを並列検索し、実エンゲージで直近30日を要約するスキル
+what: 複数プラットフォームを並列に検索し、いいねやアップボートなど実際の反応で重み付けして、直近30日分を1本のブリーフにまとめるエージェントスキル。Reddit／HNなどはキーなしで始められ、XやYouTubeは追加設定で解放する。
+goodFor:
+- 話題の温度感を調べるリサーチ
+- 編集者・マーケの週次ウォッチ
+ease:
+  level: 4
+  text: Claude Codeのマーケットプレイスや skills.sh で導入。追加媒体は初回ウィザードで設定。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-08）'
+  url: https://x.com/so_ainsight/status/2064002076590657895
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 64555
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-18

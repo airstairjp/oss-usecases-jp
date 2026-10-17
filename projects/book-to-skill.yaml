@@ -1,0 +1,29 @@
+slug: book-to-skill
+name: book-to-skill
+repo: virgiliojr94/book-to-skill
+category: dev
+uses:
+- docs
+- coding
+tagline: 技術書や資料フォルダを、エージェントが必要な章だけ読むスキルへ蒸留する
+what: PDFやフォルダを指定すると、要約ではなくフレームワークや判断規則、章ごとの参照ファイルを持つエージェントスキルに変換する。質問時に関連章だけを読ませ、トークンを大幅に節約できると主張。
+goodFor:
+- 技術書をエージェントの参照知識にする
+- 長い仕様書をスキル化して問い合わせる
+ease:
+  level: 4
+  text: 対応エージェントにスキルを入れ、/book-to-skill で変換する。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-31）'
+  url: https://x.com/so_ainsight/status/2061102910264811937
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 35133
+  pushedAt: 2026-10-12
+  fetchedAt: 2026-10-18

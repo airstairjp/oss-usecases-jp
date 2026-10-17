@@ -1,0 +1,31 @@
+slug: diagram-design
+name: diagram-design
+repo: cathrynlavery/diagram-design
+homepage: https://diagramdesign.dev
+category: content
+uses:
+- writing
+- coding
+tagline: ブランドに合わせた図解を、1つのHTML＋SVGとしてエージェントに描かせるスキル
+what: アーキテクチャ図・四象限・シーケンスなど約45種の図を、影やMermaidっぽさを避けた編集向けスタイルで、単一のHTMLファイルとして出力するエージェントスキル。サイトURLから色やフォントを取り込み、以降の図をブランドに揃えられる。
+goodFor:
+- 資料用のきれいな図解を量産する
+- エージェントにブランド準拠のダイアグラムを描かせる
+ease:
+  level: 5
+  text: npx skills add で導入し、自然言語で図の種類を指定する。
+  install: npx skills add cathrynlavery/diagram-design
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-08-20）'
+  url: https://x.com/so_ainsight/status/2090275140634603764
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 56798
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

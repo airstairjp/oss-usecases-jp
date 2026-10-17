@@ -1,0 +1,29 @@
+slug: codegraph
+name: CodeGraph
+repo: colbymchenry/codegraph
+homepage: https://colbymchenry.github.io/codegraph/
+category: dev
+uses:
+- coding
+tagline: リポジトリをセマンティックなコードグラフとして索引し、エージェントの文脈取得を精密化する
+what: コードベースをローカルでグラフ索引し、Claude CodeやCursorなどのエージェントが必要な箇所だけを精密に参照できるようにする。Rustカーネル、CLI、MCPを備え、コード変更に追従して同期する。
+goodFor:
+- 大規模リポジトリでのAIコーディング
+- 関連箇所の取りこぼしを減らしたいとき
+ease:
+  level: 4
+  text: ワンコマンドでCLIを入れ、エージェント連携インストーラを走らせる。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-24）'
+  url: https://x.com/so_ainsight/status/2058518896907538932
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 74326
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

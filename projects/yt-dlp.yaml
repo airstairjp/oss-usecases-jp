@@ -1,0 +1,29 @@
+slug: yt-dlp
+name: yt-dlp
+repo: yt-dlp/yt-dlp
+category: web-data
+uses:
+- scraping
+tagline: 多数の動画サイトに対応する、高機能なコマンドライン動画／音声ダウンローダ
+what: youtube-dl系の後継として広く使われるダウンローダ。数千サイトに対応し、形式選択、字幕、メタデータ、後処理まで細かく制御できる。エージェントが動画を素材として扱うときの定番ツールでもある。
+goodFor:
+- 調査用に動画・音声を取得する
+- エージェントの動画処理パイプラインの入口
+ease:
+  level: 5
+  text: バイナリまたはpipで入れ、URLを渡すだけ。
+  install: pip install -U yt-dlp
+license:
+  spdx: Unlicense
+  name: The Unlicense（パブリックドメイン相当）
+  note: 著作権を放棄したパブリックドメイン相当の扱いで、制約なく使える。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-30）'
+  url: https://x.com/so_ainsight/status/2049866127858446765
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 198795
+  pushedAt: 2026-10-11
+  fetchedAt: 2026-10-18

@@ -1,0 +1,32 @@
+slug: anydoc
+name: anydoc
+repo: firecrawl/anydoc
+homepage: https://firecrawl.github.io/anydoc/
+category: docs
+uses:
+- docs
+- rag
+tagline: Word／Excel／PDFなどを、ミリ秒単位でMarkdownにそろえるRust製変換ライブラリ
+what: Firecrawl製の文書変換ライブラリ。Office系・OpenDocument・RTF・EPUB・CSV・PDFなどを統一的なGFM Markdownにする。Node／Python／WASM／CLIがあり、エージェントスキルとしても配布。スキャンPDFのOCRはFirecrawl
+  Parseへ indirection。
+goodFor:
+- RAG前のオフィス文書正規化
+- エージェントに渡す文書の前処理
+ease:
+  level: 5
+  text: npx や pip で即実行できる。
+  install: npx @firecrawl/anydoc --help
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-08-05）'
+  url: https://x.com/so_ainsight/status/2084839337552982127
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 22909
+  pushedAt: 2026-08-28
+  fetchedAt: 2026-10-18

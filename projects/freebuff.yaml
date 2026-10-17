@@ -1,0 +1,30 @@
+slug: freebuff
+name: Freebuff
+repo: CodebuffAI/freebuff
+homepage: https://freebuff.com
+category: dev
+uses:
+- coding
+- agent
+tagline: サブスクやAPIキーなしで使える、無料枠のコーディングエージェント一式
+what: ターミナル／デスクトップ／Web／GitHub連携など、無料で使えるコーディング向けエージェント製品群。テキスト広告などで無料モデル利用を支えるモデル。有料プランもある。
+goodFor:
+- APIキーなしでコーディングエージェントを試す
+- 個人の試作や学習用途
+ease:
+  level: 4
+  text: CLIやデスクトップを入れて、そのまま指示を出せる。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-13）'
+  url: https://x.com/so_ainsight/status/2054700799801078011
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 13591
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

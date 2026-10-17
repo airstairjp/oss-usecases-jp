@@ -1,0 +1,32 @@
+slug: tradingagents
+name: TradingAgents
+repo: TauricResearch/TradingAgents
+homepage: https://arxiv.org/pdf/2412.20138
+category: ai-app
+uses:
+- agent
+- automation
+tagline: 複数の専門エージェントが議論しながら投資判断を進める、金融向けマルチエージェント枠組み
+what: アナリスト役・トレーダー役など複数のLLMエージェントを組み合わせ、銘柄分析から売買判断までを進めるフレームワーク。バックテストやレポート出力、複数モデルの使い分けなどに対応する研究・実験向けの基盤。
+goodFor:
+- 金融エージェントの研究・試作
+- 銘柄分析レポートの自動生成実験
+notFor:
+- 実資金の自動売買を無検証で本番運用すること（リスク管理は利用者責任）
+ease:
+  level: 2
+  text: Python環境と複数のLLM APIキー、金融データ取得の設定が必要。研究コード寄りの導入感。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-05）'
+  url: https://x.com/so_ainsight/status/2062730894511947783
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 111657
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

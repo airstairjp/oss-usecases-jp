@@ -1,0 +1,30 @@
+slug: claude-mem
+name: Claude-Mem
+repo: thedotmack/claude-mem
+homepage: https://claude-mem.ai
+category: dev
+uses:
+- coding
+- agent
+tagline: コーディングエージェントの作業履歴を要約して、次のセッションへ引き継ぐ記憶レイヤ
+what: ツール呼び出しなどの観測を自動で取り込み、意味のある要約を作って次のセッションで参照できるようにする永続メモリ。Claude Code向けを中心に、複数のエージェント環境への導入手順がある。
+goodFor:
+- セッションをまたいでプロジェクト文脈を残したいとき
+- 毎回同じ説明をエージェントに繰り返したくないとき
+ease:
+  level: 4
+  text: ワンコマンドのインストーラがある。アカウント連携が案内される場合あり。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-13）'
+  url: https://x.com/so_ainsight/status/2043479332086235243
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 101332
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

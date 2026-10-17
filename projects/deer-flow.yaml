@@ -1,0 +1,30 @@
+slug: deer-flow
+name: DeerFlow
+repo: bytedance/deer-flow
+homepage: https://deerflow.tech
+category: ai-app
+uses:
+- agent
+- automation
+tagline: サブエージェント・メモリ・サンドボックスを束ねる、ByteDance発のスーパーエージェント枠組み
+what: ByteDanceが公開するオープンソースのエージェント・ハーネス（2.xは書き直し）。サブエージェントの委任、メモリ、サンドボックス、拡張スキルを組み合わせ、調査・コーディング・制作など長めのタスクを回す。v1のディープリサーチ枠組みは別ブランチで維持。
+goodFor:
+- 長時間の調査・実装をエージェントに任せる実験
+- 社内向けスーパーエージェントの土台
+ease:
+  level: 2
+  text: モデルAPIや実行環境の準備が必要。ドキュメントとデモを確認してから導入。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-10）'
+  url: https://x.com/so_ainsight/status/2053613624711934135
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 84013
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

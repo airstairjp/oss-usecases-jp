@@ -1,0 +1,31 @@
+slug: scrapling
+name: Scrapling
+repo: D4Vinci/Scrapling
+homepage: https://scrapling.readthedocs.io/en/latest/
+category: web-data
+uses:
+- scraping
+- browser
+tagline: ページ構造の変化に追従し、ボット対策も意識した適応型Webスクレイピング枠組み
+what: 単発リクエストから大規模クロールまでを扱うPythonのスクレイピング枠組み。パーサが要素位置の変化を学習して追従し、Cloudflare Turnstileなどへの対策付きフェッチャや、中断再開・プロキシ回転つきのSpiderも備える。
+goodFor:
+- レイアウトが変わりやすいサイトの継続取得
+- 本格的なクロール基盤の自前構築
+ease:
+  level: 3
+  text: pip で入れて数行から始められる。大規模運用はプロキシや並列の設計が必要。
+  install: pip install scrapling
+license:
+  spdx: BSD-3-Clause
+  name: BSD 3-Clause License
+  note: 利用・改変・再配布が自由（著作権表示の保持が必要。開発者名を宣伝に使うことは不可）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-02）'
+  url: https://x.com/so_ainsight/status/2050379784916705770
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 88242
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

@@ -1,0 +1,32 @@
+slug: vibe-trading
+name: Vibe-Trading
+repo: HKUDS/Vibe-Trading
+homepage: https://vibetrading.wiki/
+category: ai-app
+uses:
+- agent
+- automation
+tagline: コーディングエージェントに、調査から取引オペまで一式のトレーディング能力を足す枠組み
+what: HKUDSが公開するパーソナル・トレーディング・エージェント基盤。ワンコマンドでエージェントに相場調査・分析・（設定次第で）取引まわりの能力を付与する。API／MCP、シャドウ口座、研究用の各種ガードがある。実資金利用は自己責任。
+goodFor:
+- 投資調査エージェントの実験
+- デモ／紙取引での戦略検証
+notFor:
+- 十分な検証なしの実資金自動売買
+ease:
+  level: 2
+  text: ドキュメントに沿った導入と、取引所／データAPIの鍵設定が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-01）'
+  url: https://x.com/so_ainsight/status/2061286626635218956
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 35691
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

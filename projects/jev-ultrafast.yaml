@@ -1,0 +1,30 @@
+slug: jev-ultrafast
+name: Jev Ultrafast
+repo: browser-use/jev-ultrafast
+homepage: https://browser-use.com
+category: web-data
+uses:
+- browser
+- agent
+tagline: 動的な操作候補から選ばせることで、高速・低コストを狙うブラウザエージェント
+what: Browser Use系の高速ブラウザエージェント。画面上の要素を索引し、CLICK／TYPEなどの操作を選ばせる方式で、小さなモデルでも速く動かす。デモではフライト検索などを数秒で行う例を示している。
+goodFor:
+- 単純なWeb操作を速く安く回したいとき
+- ブラウザエージェントのレイテンシ検証
+ease:
+  level: 3
+  text: uv で入れ、Browser Harness経由でChromeに接続するデモが案内されている。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-09-22）'
+  url: https://x.com/so_ainsight/status/2102412366487146919
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 23144
+  pushedAt: 2026-09-30
+  fetchedAt: 2026-10-18

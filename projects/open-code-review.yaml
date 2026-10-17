@@ -1,0 +1,29 @@
+slug: open-code-review
+name: Open Code Review
+repo: alibaba/open-code-review
+homepage: https://open-codereview.ai
+category: dev
+uses:
+- coding
+tagline: Alibaba社内で鍛えられた、差分レビュー特化のAIコードレビューCLI
+what: Gitの差分を読み、ツール利用可能なエージェント経由でLLMに渡し、行単位の指摘を出すCLI。ファイル全体スキャンも可能。一般的なコーディングエージェントよりトークンを抑えつつ精度（Precision）を重視する設計で、大規模ベンチマークも公開している。
+goodFor:
+- PRレビューの一次チェック
+- レビューノイズを抑えたいチーム
+ease:
+  level: 4
+  text: モデルエンドポイントを設定すればCLIで開始できる。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-09-21）'
+  url: https://x.com/so_ainsight/status/2101871551255830529
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 47535
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

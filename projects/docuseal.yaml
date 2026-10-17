@@ -1,0 +1,36 @@
+slug: docuseal
+name: DocuSeal
+repo: docusealco/docuseal
+homepage: https://www.docuseal.com
+category: infra
+uses:
+- self-host
+- automation
+tagline: PDFの作成・記入・電子署名を、自社サーバーでも回せるDocuSign代替
+what: PDFフォームの作成、複数署名者への回付、メール通知、監査に使える電子署名を提供するオープンソース。Dockerで手早く立ち上げられ、API／Webhook連携もある。クラウド版とセルフホスト版がある。
+goodFor:
+- 契約書・申込書の電子署名を自前運用する
+- DocuSignの費用を抑えたい中小チーム
+cases:
+- title: Hulahoopが、DocuSignからDocuSealへ1日で切り替え
+  summary: フィンテックのHulahoopが、価格と開発体験を理由にDocuSignからセルフホスト可能なDocuSealへ移行。ベンダーをインターフェースの裏に置いた設計のおかげで、切り替えは1日で完了したと責任者が述べている。
+  source:
+    name: Guillem Francisco LinkedIn投稿（英語）
+    url: https://www.linkedin.com/posts/guillem-francisco_from-docusign-to-docuseal-in-a-day-when-activity-7479877298863759360-cobE
+ease:
+  level: 4
+  text: docker run 一発、またはComposeでHTTPS付き公開ができる。
+  install: docker run --name docuseal -p 3000:3000 -v.:/data docuseal/docuseal
+license:
+  spdx: AGPL-3.0
+  name: GNU AGPL v3.0
+  note: 改変したものをネットワーク越しのサービスとして提供する場合も、ソースコードの公開義務がある。
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-06）'
+  url: https://x.com/so_ainsight/status/2051919966174359569
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 18744
+  pushedAt: 2026-10-12
+  fetchedAt: 2026-10-18

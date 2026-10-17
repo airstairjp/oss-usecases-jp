@@ -1,0 +1,30 @@
+slug: opencut
+name: OpenCut
+repo: OpenCut-app/OpenCut
+homepage: https://opencut.app
+category: content
+uses:
+- writing
+- agent
+tagline: Web／デスクトップ／モバイル向けの、CapCut代替を目指すOSS動画エディタ
+what: ブラウザやデスクトップで使えるオープンソースの動画エディタ。現在は全面書き換え中で、MCPサーバーやヘッドレス実行、プラグイン前提の設計を進めている。当面の利用は classic 版が案内されている。
+goodFor:
+- CapCut代替のセルフホスト編集環境
+- エージェントから編集を操作する基盤（将来のMCP含む）
+ease:
+  level: 2
+  text: 書き換え進行中のため、本番利用はclassic版やドキュメントの現状確認が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-03）'
+  url: https://x.com/so_ainsight/status/2062099546625442213
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 95048
+  pushedAt: 2026-09-24
+  fetchedAt: 2026-10-18

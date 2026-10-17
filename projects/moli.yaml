@@ -1,0 +1,31 @@
+slug: moli
+name: Moli
+repo: lexmount/moli
+homepage: https://browser.lexmount.com
+category: web-data
+uses:
+- browser
+- scraping
+- agent
+tagline: AIエージェント向けに軽いながら互換性の高い、Rust製ヘッドレスブラウザ
+what: ページ取得・Markdown化・セマンティックツリー出力、CDP／WebDriver対応の自動化サーバーを備えたヘッドレスブラウザ。エージェントがWebを読む・操作するための実行基盤として、Linux／macOS／Windowsで動く。
+goodFor:
+- エージェント用の軽量ブラウザ実行環境
+- ページのMarkdown／構造化抽出
+ease:
+  level: 4
+  text: インストールスクリプトまたはエージェントへのセットアッププロンプトで導入。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-10-07）'
+  url: https://x.com/so_ainsight/status/2107639561178464513
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 19197
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

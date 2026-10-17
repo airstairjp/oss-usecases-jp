@@ -1,0 +1,30 @@
+slug: video-use
+name: video-use
+repo: browser-use/video-use
+homepage: https://video-use.com
+category: content
+uses:
+- writing
+- agent
+tagline: 素材フォルダを渡すと、カット・色補正・字幕までエージェントが仕上げる動画編集スキル
+what: Browser Useチームの動画編集スキル。素材をフォルダに入れ、Claude Codeなどに指示すると、フィラー除去、色補正、字幕焼き込み、アニメ重ねなどを経て final.mp4 を出す。LLMは映像を「見る」のではなく読み取れる表現で編集判断する。
+goodFor:
+- トーク動画やチュートリアルの一次編集
+- エージェントに編集オペレーションを任せたいとき
+ease:
+  level: 3
+  text: セットアップ用プロンプトをエージェントに貼る。音声系でElevenLabsキーが必要な場合あり。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-17）'
+  url: https://x.com/so_ainsight/status/2044974192299569408
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 29169
+  pushedAt: 2026-10-09
+  fetchedAt: 2026-10-18

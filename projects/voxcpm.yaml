@@ -1,0 +1,29 @@
+slug: voxcpm
+name: VoxCPM
+repo: OpenBMB/VoxCPM
+homepage: https://voxcpm.com
+category: content
+uses:
+- writing
+tagline: トークン化を挟まずに音声を生成する、多言語対応のオープンTTS
+what: 離散トークンを介さず連続表現から音声を直接生成するTTS。最新のVoxCPM2は多言語・声のデザイン・クローン・48kHz出力などに対応する。研究・制作の両方で使える。
+goodFor:
+- 多言語ナレーションの生成
+- 参照音声からの声クローン
+ease:
+  level: 2
+  text: モデルが大きく、GPU環境での実行が前提。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-30）'
+  url: https://x.com/so_ainsight/status/2060749332673098044
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 39461
+  pushedAt: 2026-10-08
+  fetchedAt: 2026-10-18

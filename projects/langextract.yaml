@@ -1,0 +1,32 @@
+slug: langextract
+name: LangExtract
+repo: google/langextract
+homepage: https://pypi.org/project/langextract/
+category: docs
+uses:
+- docs
+- rag
+tagline: 非構造テキストから、根拠位置つきで構造化情報を抜き出すGoogle製ライブラリ
+what: ユーザーが定義した指示とFew-shot例に沿い、LLMでテキストから構造化データを抽出する。抽出結果を原文位置に紐づけ、長文向けの分割・並列・可視化HTMLも備える。クラウドモデル뿐아니라
+  OllamaなどローカルLLMにも対応。
+goodFor:
+- 契約書・診療記録・報告書からの項目抽出
+- 抽出結果の根拠を画面で確認したいとき
+ease:
+  level: 4
+  text: pip で入れ、モデルAPIキーまたはOllamaを用意すれば始められる。
+  install: pip install langextract
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-29）'
+  url: https://x.com/so_ainsight/status/2049511567402868927
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 38965
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

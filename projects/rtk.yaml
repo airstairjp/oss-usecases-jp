@@ -1,0 +1,30 @@
+slug: rtk
+name: RTK
+repo: rtk-ai/rtk
+homepage: https://www.rtk-ai.app
+category: dev
+uses:
+- coding
+- agent
+tagline: エージェントが読むコマンド出力などを圧縮し、トークン消費を減らすCLI
+what: シェルコマンドの出力などをLLMに渡す前に圧縮・フィルタするRust製バイナリ。多数のコマンドに対応し、フック経由でエージェントから透過的に使える。Apache-2.0のOSS版と、圧縮エンジン付きの別配布がある。
+goodFor:
+- エージェントのトークン課金を抑えたいとき
+- ログやビルド出力を短くして渡したいとき
+ease:
+  level: 4
+  text: バイナリを入れてフックを有効化する。エージェント設定はほぼそのまま使える。
+license:
+  spdx: Apache-2.0
+  name: Apache-2.0（OSS版）／圧縮エンジンはBUSL
+  note: OSS版はApache-2.0。圧縮エンジン付き配布はBUSL-1.1で、第三者向けの商用再提供には別契約が必要。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-05）'
+  url: https://x.com/so_ainsight/status/2040791657520693558
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 83705
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

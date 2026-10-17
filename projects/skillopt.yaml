@@ -1,0 +1,32 @@
+slug: skillopt
+name: SkillOpt
+repo: microsoft/SkillOpt
+homepage: https://aka.ms/skillopt
+category: dev
+uses:
+- coding
+- agent
+tagline: エージェントのスキル文面を、学習ループで自動最適化するMicrosoft製ツール
+what: モデルの重みは触らず、スキル（自然言語の手順）をエポックやバッチ、検証ゲートつきで改善していく最適化器。夜間にセッションを見直して進化させる SkillOpt-Sleep なども含む。Claude
+  Code／Codex等への接続例あり。
+goodFor:
+- エージェントスキルの品質を継続的に上げたいとき
+- 失敗ログから手順を自動で直したいとき
+ease:
+  level: 2
+  text: Pythonパッケージとデータ準備、評価用タスクの設計が必要。研究寄りの導入。
+  install: pip install skillopt
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-29）'
+  url: https://x.com/so_ainsight/status/2060164528621637835
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 18507
+  pushedAt: 2026-10-07
+  fetchedAt: 2026-10-18

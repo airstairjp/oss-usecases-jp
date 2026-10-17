@@ -1,0 +1,29 @@
+slug: voicebox
+name: Voicebox
+repo: jamiepine/voicebox
+homepage: https://voicebox.sh
+category: content
+uses:
+- writing
+tagline: 声のクローン・読み上げ・ディクテーションを、手元で完結させるAIボイススタジオ
+what: 数秒の音声から声をクローンし、多言語TTSやホットキーによるディクテーション、エージェントへの音声入出力までをローカルで扱うデスクトップアプリ。ElevenLabsやWisprFlowの代替を志向し、モデルと音声データは原則として外に出さない。
+goodFor:
+- プライバシー重視の音声合成・文字起こし
+- エージェントに自分の声で話させたいとき
+ease:
+  level: 3
+  text: 公式サイトからアプリを入れる。初回にモデルダウンロードとマイク権限が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-18）'
+  url: https://x.com/so_ainsight/status/2045495105193390305
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 57819
+  pushedAt: 2026-10-07
+  fetchedAt: 2026-10-18

@@ -1,0 +1,32 @@
+slug: ecc
+name: ECC
+repo: affaan-m/ECC
+homepage: https://ecc.tools
+category: dev
+uses:
+- coding
+- agent
+tagline: 計画・検証・レビュー・記憶・スキル化までをまとめた、エージェント用の開発ハーネス
+what: コーディングエージェントに、計画→実装→テスト検証→別コンテキストでのレビュー→重要事項の記憶→再利用スキル化、という一連の開発プロセスを仕込むハーネス。Claude Code・Codex・Cursorなど複数の実行環境に対応する。OSS本体はMITで、プライベート向けのPro（GitHub
+  App）もある。
+goodFor:
+- エージェントにチーム開発に近い進め方をさせたいとき
+- 繰り返しの勝ちパターンをスキルとして残したいとき
+ease:
+  level: 4
+  text: Claude Codeならプラグインとして導入。公式のインストール経路以外は使わないよう案内されている。
+  install: （Claude Code）/plugin install ecc@ecc
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-03）'
+  url: https://x.com/so_ainsight/status/2061978727773548699
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 282075
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-18

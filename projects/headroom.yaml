@@ -1,0 +1,30 @@
+slug: headroom
+name: Headroom
+repo: headroomlabs-ai/headroom
+homepage: https://docs.headroomlabs.ai/docs
+category: dev
+uses:
+- coding
+- agent
+tagline: ツール出力やログをローカルで圧縮してからLLMに渡し、トークンを削るレイヤ
+what: エージェントが読むツール出力・ログ・RAG断片・履歴などを、LLMに送る前に圧縮する。圧縮は手元で行い、内容を外部に送らない。ライブラリ、プロキシ、主要エージェントへのラップ、MCPサーバー、エージェント横断メモリなどを提供する。
+goodFor:
+- エージェントのコンテキスト肥大化対策
+- 複数エージェントでメモリを共有したいとき
+ease:
+  level: 4
+  text: pip／npm や headroom wrap で既存エージェントに被せられる。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-09）'
+  url: https://x.com/so_ainsight/status/2064183213745176943
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 75567
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

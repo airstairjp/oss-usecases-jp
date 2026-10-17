@@ -3,24 +3,26 @@ name: Syncthing
 repo: syncthing/syncthing
 homepage: https://syncthing.net/
 category: infra
-uses: [sync, self-host]
+uses:
+- sync
+- self-host
 tagline: 中央サーバーを置かず、PC・スマホ・NAS同士でフォルダを直接同期するツール
-what: >-
-  クラウドストレージを使わずに、手持ちの端末同士でフォルダを同期するツール。データは端末間で直接（必要なら中継サーバー経由で）
-  暗号化してやりとりされ、端末IDを登録して許可した機器だけが参加できる。片方向（送信のみ・受信のみ）の同期や、変更履歴の保存も設定できる。
+what: クラウドストレージを使わずに、手持ちの端末同士でフォルダを同期するツール。データは端末間で直接（必要なら中継サーバー経由で） 暗号化してやりとりされ、端末IDを登録して許可した機器だけが参加できる。片方向（送信のみ・受信のみ）の同期や、変更履歴の保存も設定できる。
 goodFor:
-  - 外部クラウドに置きたくないファイルの複数端末での共有
-  - 拠点・自宅・NASの間での作業フォルダの同期
-  - 簡易なバックアップ（送信専用の同期と履歴保存の組み合わせ）
+- 外部クラウドに置きたくないファイルの複数端末での共有
+- 拠点・自宅・NASの間での作業フォルダの同期
+- 簡易なバックアップ（送信専用の同期と履歴保存の組み合わせ）
 cases:
-  - title: ドイツのIT企業synyxが、運用チームのパスワード保管庫を分散共有
-    summary: >-
-      運用チームのKeePassのパスワードファイルをSyncthingで管理者の端末間に同期。設定はPuppetで配り、常時稼働のサーバーも同期先に加えて、更新の取りこぼしを防いでいると自社ブログで紹介している。
-    source: {name: synyx 自社ブログ（英語）, url: "https://synyx.de/blog/decentralized-team-passwords-with-keepass-and-syncthing/"}
-  - title: ITサポート会社Cyberwiseが、経営者専用の機密ファイルを切り離して同期
-    summary: >-
-      社員と共有するストレージとは別に、経営者だけが扱う機密ファイルを複数端末で同期・バックアップする仕組みとして導入。ランサムウェア対策として、一部の端末は送信専用に設定したと紹介している。
-    source: {name: Cyberwise 自社ブログ（英語）, url: "https://www.cyberwise.tech/media/syncthing-is-a-good-thing"}
+- title: ドイツのIT企業synyxが、運用チームのパスワード保管庫を分散共有
+  summary: 運用チームのKeePassのパスワードファイルをSyncthingで管理者の端末間に同期。設定はPuppetで配り、常時稼働のサーバーも同期先に加えて、更新の取りこぼしを防いでいると自社ブログで紹介している。
+  source:
+    name: synyx 自社ブログ（英語）
+    url: https://synyx.de/blog/decentralized-team-passwords-with-keepass-and-syncthing/
+- title: ITサポート会社Cyberwiseが、経営者専用の機密ファイルを切り離して同期
+  summary: 社員と共有するストレージとは別に、経営者だけが扱う機密ファイルを複数端末で同期・バックアップする仕組みとして導入。ランサムウェア対策として、一部の端末は送信専用に設定したと紹介している。
+  source:
+    name: Cyberwise 自社ブログ（英語）
+    url: https://www.cyberwise.tech/media/syncthing-is-a-good-thing
 ease:
   level: 4
   text: 各OS向けのアプリやパッケージがあり、端末IDを交換して共有フォルダを選ぶだけで始められる。NAS向けパッケージもある。
@@ -33,4 +35,7 @@ checked: 2026-10-17
 github:
   stars: 89471
   pushedAt: 2026-10-13
-  fetchedAt: 2026-10-17
+  fetchedAt: 2026-10-18
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-21）'
+  url: https://x.com/so_ainsight/status/2046514352006816217

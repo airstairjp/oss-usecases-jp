@@ -1,0 +1,30 @@
+slug: career-ops
+name: career-ops
+repo: career-ops-hq/career-ops
+homepage: https://career-ops.org
+category: content
+uses:
+- automation
+- agent
+tagline: 求人の適合判定から履歴書の調整までを、手元のAIに任せる就職活動エージェント
+what: 求人票を貼ると、まだ募集中か・自分に合うかを手元で判定し、履歴書の調整や回答案まで作るオープンソースの就職活動エージェント。作者自身の転職で使われ、その後公開された。ローカル実行が基本。
+goodFor:
+- 応募先の見極めと書類作成の効率化
+- AI CLI上で就職活動ワークフローを回したいとき
+ease:
+  level: 4
+  text: 対応するAI CLIに入れて、求人票を貼るところから始められる。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-21）'
+  url: https://x.com/so_ainsight/status/2046544581609845101
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 75322
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

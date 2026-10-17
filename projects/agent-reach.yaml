@@ -1,0 +1,30 @@
+slug: agent-reach
+name: Agent Reach
+repo: Panniantong/Agent-Reach
+category: web-data
+uses:
+- scraping
+- agent
+- browser
+tagline: X・Reddit・YouTubeなど複数媒体を、API課金なしでエージェントに読ませる導入キット
+what: エージェントがWeb上の情報を読めない問題に対し、各プラットフォーム向けの取得手段を選んで入れ、健康診断までまとめて行うツール。無料のオープンソース経路を優先し、壊れたら差し替えられるよう「本命＋予備」の構成を取る方針。
+goodFor:
+- エージェントにSNSや動画字幕を読ませたいとき
+- 媒体ごとの取得手段の選定・更新を外注化したくないとき
+ease:
+  level: 3
+  text: エージェントにセットアップ用の一文を渡す導入が案内されている。サーバー経由だと安価なプロキシが必要になる場合あり。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-09）'
+  url: https://x.com/so_ainsight/status/2064243654307594443
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 98580
+  pushedAt: 2026-10-15
+  fetchedAt: 2026-10-18

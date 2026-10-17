@@ -1,0 +1,30 @@
+slug: graphify
+name: Graphify
+repo: Graphify-Labs/graphify
+homepage: https://www.graphify.com
+category: dev
+uses:
+- coding
+- rag
+tagline: コードや文書を知識グラフ化し、grepではなく関係をたどって質問できるツール
+what: コーディングエージェントから /graphify と指示すると、コード・文書・PDFなどを知識グラフに変換する。コードはtree-sitterでローカル解析（LLM不要）、文書などは意味解析を併用。ベクトル検索ではなくグラフをたどる方式で、エージェントのトークン消費を抑えやすいと謳っている。
+goodFor:
+- 大きなリポジトリの構造把握
+- エージェントにコードベースを効率よく読ませたいとき
+ease:
+  level: 4
+  text: 対応エージェントにスキルとして入れる。クラウド版（有料）もある。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-07-20）'
+  url: https://x.com/so_ainsight/status/2079041116180242577
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 127546
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

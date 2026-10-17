@@ -1,0 +1,30 @@
+slug: meetily
+name: Meetily
+repo: Zackriya-Solutions/meetily
+homepage: https://meetily.ai
+category: ai-app
+uses:
+- internal-ai
+- self-host
+tagline: 会議の録音・文字起こし・要約を、データ外出しなしで行うプライバシー重視アシスタント
+what: 会議をキャプチャし、リアルタイム文字起こしと要約を手元のインフラで完結させる。クラウドに音声を送らない前提で、高速なローカルASRモデルを使う。個人利用から企業のコンプライアンス要件までを想定。
+goodFor:
+- 機密会議の文字起こし
+- オンプレ前提の会議アシスタント
+ease:
+  level: 3
+  text: インストーラやドキュメントに沿ってローカル／自社サーバーへ導入。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-07-13）'
+  url: https://x.com/so_ainsight/status/2076504402308047281
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 31829
+  pushedAt: 2026-09-16
+  fetchedAt: 2026-10-18

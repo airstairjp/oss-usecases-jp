@@ -1,0 +1,30 @@
+slug: agentmemory
+name: agentmemory
+repo: rohitg00/agentmemory
+homepage: https://agent-memory.dev
+category: dev
+uses:
+- coding
+- agent
+tagline: 複数のコーディングエージェントで共有できる、永続メモリ層
+what: Claude Code、Cursor、Codex、Gemini CLIなど複数ハーネスをまたいで記憶を残す。信頼度スコアや知識グラフ、ハイブリッド検索を備え、「同じ説明を何度もしない」ための実装。MCPクライアントからも使える。
+goodFor:
+- エージェントを切り替えても文脈を持ち越したいとき
+- チームで共有メモリを持ちたいとき
+ease:
+  level: 4
+  text: 対話式セットアップでエージェントを選び、メモリサーバーを起動する。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-17）'
+  url: https://x.com/so_ainsight/status/2055891150729625959
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 29612
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-18

@@ -1,0 +1,30 @@
+slug: archify
+name: Archify
+repo: tt-a1i/archify
+homepage: https://archify.si
+category: dev
+uses:
+- coding
+- writing
+tagline: アイデアやコードベースを、操作できるインタラクティブな図に変えるエージェントスキル
+what: エージェントに説明やリポジトリを渡すと、探索・共有できるインタラクティブなHTML図を生成するスキル。アーキテクチャ図だけでなく、学習マップや行程表など「理解・計画・共有」のための視覚化全般に使える。
+goodFor:
+- システム構成の説明資料づくり
+- エージェントに図解付きの設計共有をさせたいとき
+ease:
+  level: 5
+  text: Cursor／Claude Code／Codex／OpenCode向けにスキルとして入れる。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-09-07）'
+  url: https://x.com/so_ainsight/status/2096798121821131192
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 84728
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

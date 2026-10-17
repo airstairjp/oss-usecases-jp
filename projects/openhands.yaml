@@ -1,0 +1,31 @@
+slug: openhands
+name: OpenHands
+repo: OpenHands/OpenHands
+homepage: https://openhands.dev
+category: dev
+uses:
+- coding
+- agent
+- automation
+tagline: コーディングエージェントを常駐チームとして回す、自己ホスト向けコントロールセンター
+what: OpenHands本体やClaude Code・Codexなど複数のエージェントを、ローカル／Docker／クラウド上で起動・監視し、SlackやGitHub連携の自動化までまとめる開発者向けコントロールセンター。会話と定型オペレーションを一画面で扱う。
+goodFor:
+- 社内に常駐のコーディングエージェント環境を用意する
+- Issue分解や定時レポートなどの自動化
+ease:
+  level: 3
+  text: ローカル起動は比較的早いが、チーム運用ではバックエンドや権限設計が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-13）'
+  url: https://x.com/so_ainsight/status/2065818995098583438
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 91114
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

@@ -1,0 +1,28 @@
+slug: security-audit-skill
+name: security-audit
+repo: cloudflare/security-audit-skill
+category: dev
+uses:
+- coding
+tagline: コーディングエージェントを、段階的なセキュリティ監査役に変えるCloudflare製スキル
+what: 偵察→カバレッジ主導の探索→検証→構造化出力→独立検証→報告書、という多段プロセスで脆弱性調査を進めるスキル。Cloudflareの脆弱性発見ハーネスの出発点となった単一リポジトリ版。
+goodFor:
+- リポジトリのセキュリティレビュー自動化
+- 監査プロセスを再現可能な形で残したいとき
+ease:
+  level: 3
+  text: スキルをエージェントに入れ、対象リポジトリで監査フローを開始する。人手の最終判断は必須。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-09-24）'
+  url: https://x.com/so_ainsight/status/2102956260413071860
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 30495
+  pushedAt: 2026-09-15
+  fetchedAt: 2026-10-18

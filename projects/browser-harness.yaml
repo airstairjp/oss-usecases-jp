@@ -1,0 +1,30 @@
+slug: browser-harness
+name: Browser Harness
+repo: browser-use/browser-harness
+homepage: https://browser-harness.com
+category: web-data
+uses:
+- browser
+- agent
+tagline: 自分のChrome（ログイン状態のまま）を、コーディングエージェントに操作させるハーネス
+what: Claude CodeやCursorなどが、普段使いのChromeをCDP経由で操作できるようにする。ログイン済みサイトの作業に強く、足りないヘルパーはエージェントが書き足していく。MCPサーバーも提供。
+goodFor:
+- ログインが必要な社内・個人サイトの自動化
+- エージェントに「自分のブラウザ」を使わせたいとき
+ease:
+  level: 4
+  text: セットアップ用プロンプトを貼り、Chromeのリモートデバッグを許可する。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-19）'
+  url: https://x.com/so_ainsight/status/2045865066135015808
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 18465
+  pushedAt: 2026-10-15
+  fetchedAt: 2026-10-18

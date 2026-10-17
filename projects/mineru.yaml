@@ -3,25 +3,27 @@ name: MinerU
 repo: opendatalab/MinerU
 homepage: https://opendatalab.github.io/MinerU/
 category: docs
-uses: [docs, rag]
+uses:
+- docs
+- rag
 tagline: PDFやOffice文書を、表や数式を崩さずにMarkdown・JSONへ変換する文書抽出ツール
-what: >-
-  PDF・Word・PowerPoint・スキャン画像などから、見出し・本文・表・数式・画像を判別して、Markdownや構造化JSONに書き出すツール。
-  レイアウト解析とOCRを組み合わせており、段組みや表の多い資料でも読み順を保ちやすい。ローカルで動かせるので、
+what: PDF・Word・PowerPoint・スキャン画像などから、見出し・本文・表・数式・画像を判別して、Markdownや構造化JSONに書き出すツール。 レイアウト解析とOCRを組み合わせており、段組みや表の多い資料でも読み順を保ちやすい。ローカルで動かせるので、
   社外に出せない文書をRAGやナレッジベースに取り込む前処理に向く（GPUがあると速い）。
 goodFor:
-  - 社内規程・報告書・論文などをRAG用のテキストにする前処理
-  - 表の多いPDF（決算資料・仕様書）のデータ化
-  - スキャンされた紙資料のテキスト化
+- 社内規程・報告書・論文などをRAG用のテキストにする前処理
+- 表の多いPDF（決算資料・仕様書）のデータ化
+- スキャンされた紙資料のテキスト化
 cases:
-  - title: 中国の技術ブログで、上場企業の年次報告書PDFをRAG用に解析
-    summary: >-
-      年次報告書のPDFをMinerUでMarkdownと構造データに変換し、表や見出しの単位で分割してRAGに入れる手順を検証している（中国語の個人ブログ）。
-    source: {name: SM Star ブログ（中国語）, url: "https://www.nosweetsm.cn/blog/2026-rag-%E6%95%B0%E6%8D%AE%E5%B1%82%E5%AE%9E%E6%88%98-%E7%94%A8-mineru-%E8%A7%A3%E6%9E%90-pdf-%E5%B9%B4%E6%8A%A5"}
-  - title: 韓国のIT企業が、DifyとMinerUで表を含む文書のRAGを実装
-    summary: >-
-      Difyだけでは表の多い文書の取り込みがうまくいかない課題に対し、MinerUで前処理してから取り込む構成を紹介している（韓国語の企業ブログ）。
-    source: {name: Open Network System ブログ（韓国語）, url: "https://open-network.co.kr/blog/mineru-rag-implementation"}
+- title: 中国の技術ブログで、上場企業の年次報告書PDFをRAG用に解析
+  summary: 年次報告書のPDFをMinerUでMarkdownと構造データに変換し、表や見出しの単位で分割してRAGに入れる手順を検証している（中国語の個人ブログ）。
+  source:
+    name: SM Star ブログ（中国語）
+    url: https://www.nosweetsm.cn/blog/2026-rag-%E6%95%B0%E6%8D%AE%E5%B1%82%E5%AE%9E%E6%88%98-%E7%94%A8-mineru-%E8%A7%A3%E6%9E%90-pdf-%E5%B9%B4%E6%8A%A5
+- title: 韓国のIT企業が、DifyとMinerUで表を含む文書のRAGを実装
+  summary: Difyだけでは表の多い文書の取り込みがうまくいかない課題に対し、MinerUで前処理してから取り込む構成を紹介している（韓国語の企業ブログ）。
+  source:
+    name: Open Network System ブログ（韓国語）
+    url: https://open-network.co.kr/blog/mineru-rag-implementation
 ease:
   level: 3
   text: pip で入れてコマンド1つで変換できるが、初回に数GB規模の解析モデルをダウンロードする。大量処理にはGPUがほしい。
@@ -33,6 +35,9 @@ license:
 added: 2026-10-17
 checked: 2026-10-17
 github:
-  stars: 81916
+  stars: 81917
   pushedAt: 2026-10-14
-  fetchedAt: 2026-10-17
+  fetchedAt: 2026-10-18
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-25）'
+  url: https://x.com/so_ainsight/status/2070117308027285851

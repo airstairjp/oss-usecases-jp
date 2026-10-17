@@ -1,0 +1,29 @@
+slug: money-printer-turbo
+name: MoneyPrinterTurbo
+repo: harry0703/MoneyPrinterTurbo
+category: content
+uses:
+- automation
+- writing
+tagline: テーマを入れると、台本・素材・字幕・BGMまでまとめて短尺動画を作るツール
+what: 動画のテーマやキーワードを渡すと、台本生成・素材集め・字幕・BGM・合成までを一通り回して短尺動画を作るオープンソース。Web UIとAPIがあり、日本語圏でもよく紹介される。利用するLLMや素材APIのキーは別途必要。
+goodFor:
+- 短尺動画の試作や量産の自動化
+- 台本から素材マッチングまでの一連作業
+ease:
+  level: 3
+  text: Dockerやローカル起動の案内あり。LLMと素材取得用のAPIキー設定が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-08）'
+  url: https://x.com/so_ainsight/status/2063971864515662330
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 132288
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

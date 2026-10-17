@@ -1,0 +1,28 @@
+slug: fooocus
+name: Fooocus
+repo: lllyasviel/Fooocus
+category: content
+uses:
+- writing
+tagline: プロンプト中心で画像を生成する、インストールが簡単なオフライン画像生成UI
+what: Stable Diffusion XLベースの画像生成アプリ。細かいパラメータ調整を減らし、プロンプトと参照画像に集中できる。NVIDIA GPU 4GB程度から動け、クリック数を抑えた導入が売り。長期はバグ修正中心のLTS。
+goodFor:
+- ローカルでのお手軽画像生成
+- Midjourney代替のオフライン環境
+ease:
+  level: 4
+  text: 配布物を入れて数クリックで初画像まで行ける設計。NVIDIA GPU推奨。
+license:
+  spdx: GPL-3.0
+  name: GNU GPL v3.0
+  note: 利用は自由。改変したものを配布する場合は、ソースコードの公開とGPLの継承が必要。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-29）'
+  url: https://x.com/so_ainsight/status/2049322552036868169
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 53565
+  pushedAt: 2025-12-02
+  fetchedAt: 2026-10-18

@@ -1,0 +1,32 @@
+slug: matt-pocock-skills
+name: Skills for Real Engineers
+repo: mattpocock/skills
+homepage: https://aihero.dev/skills
+category: dev
+uses:
+- coding
+- sdd
+tagline: 実務のエンジニアリング手順を、小さく組み合わせられるエージェントスキル集
+what: Matt Pocock氏が日常の開発で使っているエージェント向けスキル集。巨大なプロセス全体をエージェントに明け渡すのではなく、トリアージ・計画・実装・レビューなど小さな手順をスキルとして組み合わせる設計。Claude
+  Code・Codex・Copilotなど複数のエージェントに入れられる。
+goodFor:
+- AIコーディングの進め方を型にしたいとき
+- 大きな仕様駆動フレームワークが重すぎると感じるとき
+ease:
+  level: 5
+  text: プラグインまたは skills.sh で導入し、/setup-matt-pocock-skills を一度走らせる。
+  install: npx skills add mattpocock/skills
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-29）'
+  url: https://x.com/so_ainsight/status/2049280018627612959
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 294704
+  pushedAt: 2026-10-13
+  fetchedAt: 2026-10-18

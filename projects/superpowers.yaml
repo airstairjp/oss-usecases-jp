@@ -3,26 +3,28 @@ name: Superpowers
 repo: obra/superpowers
 homepage: https://github.com/obra/superpowers
 category: dev
-uses: [coding, sdd]
+uses:
+- coding
+- sdd
 tagline: コーディングエージェントに「設計→計画→テスト駆動で実装→レビュー」の手順を仕込むスキル集
-what: >-
-  Jesse Vincent氏が公開している、Claude Codeなどのコーディングエージェント向けのスキル（手順書）集。
-  要件のブレインストーミング、設計、細かい実装計画、テスト駆動開発、サブエージェントへの作業の割り振り、コードレビューといった
+what: Jesse Vincent氏が公開している、Claude Codeなどのコーディングエージェント向けのスキル（手順書）集。 要件のブレインストーミング、設計、細かい実装計画、テスト駆動開発、サブエージェントへの作業の割り振り、コードレビューといった
   開発の進め方をスキルとして入れておくことで、エージェントが場当たり的にコードを書くのを防ぐ。
 goodFor:
-  - 中〜大規模の機能をエージェントに任せるとき
-  - テストを先に書かせるなど、開発の作法をエージェントに守らせたいとき
+- 中〜大規模の機能をエージェントに任せるとき
+- テストを先に書かせるなど、開発の作法をエージェントに守らせたいとき
 notFor:
-  - すぐ終わる小さな修正（計画やレビューの手順が重く、トークン消費も増えやすい）
+- すぐ終わる小さな修正（計画やレビューの手順が重く、トークン消費も増えやすい）
 cases:
-  - title: 作者本人が、日々のエージェント開発の進め方を解説
-    summary: >-
-      作者が自分の開発で、計画を書かせてからサブエージェントに実行させ、レビューを挟む流れをどう回しているかを、スキルの設計意図とあわせて説明している。
-    source: {name: 作者ブログ Massively Parallel Procrastination（英語）, url: "https://blog.fsck.com/2025/10/09/superpowers/"}
-  - title: 利用者が、サブエージェント駆動開発のトークン消費を計測
-    summary: >-
-      Superpowersのサブエージェント駆動の開発手順を実際に使い、どれだけトークン（費用）がかかるかを検証した個人ブログ。導入前のコスト感の参考になる。
-    source: {name: Tim Schipper ブログ（英語）, url: "https://tim-schipper.nl/en/blog/superpowers-subagent-driven-development-cost"}
+- title: 作者本人が、日々のエージェント開発の進め方を解説
+  summary: 作者が自分の開発で、計画を書かせてからサブエージェントに実行させ、レビューを挟む流れをどう回しているかを、スキルの設計意図とあわせて説明している。
+  source:
+    name: 作者ブログ Massively Parallel Procrastination（英語）
+    url: https://blog.fsck.com/2025/10/09/superpowers/
+- title: 利用者が、サブエージェント駆動開発のトークン消費を計測
+  summary: Superpowersのサブエージェント駆動の開発手順を実際に使い、どれだけトークン（費用）がかかるかを検証した個人ブログ。導入前のコスト感の参考になる。
+  source:
+    name: Tim Schipper ブログ（英語）
+    url: https://tim-schipper.nl/en/blog/superpowers-subagent-driven-development-cost
 ease:
   level: 5
   text: Claude Codeならプラグインのマーケットプレイスを追加してインストールするだけ。
@@ -34,6 +36,9 @@ license:
 added: 2026-10-17
 checked: 2026-10-17
 github:
-  stars: 301027
+  stars: 301037
   pushedAt: 2026-10-10
-  fetchedAt: 2026-10-17
+  fetchedAt: 2026-10-18
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-19）'
+  url: https://x.com/so_ainsight/status/2056532810387877931

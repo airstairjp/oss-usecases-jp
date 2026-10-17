@@ -1,0 +1,29 @@
+slug: ai-job-search
+name: AI Job Search
+repo: MadsLorentzen/ai-job-search
+category: content
+uses:
+- automation
+- agent
+tagline: Claude Code上で、求人評価から履歴書・面接準備まで回す転職フレームワーク
+what: プロフィールを入れ、求人の評価・CV調整・カバーレター・面接準備をClaude Codeのワークフローで進める。作者自身がこの枠組みで転職した経験を公開している。国や言語に依存しにくいコア手順と、求人サイト連携がある。
+goodFor:
+- 転職活動の書類作成を効率化する
+- 自分用にフォークして職探しエージェントを持つ
+ease:
+  level: 4
+  text: リポジトリをフォークし、Claude Codeでプロファイル設定から始める。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-04）'
+  url: https://x.com/so_ainsight/status/2062371361335717948
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 49562
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-18

@@ -1,0 +1,29 @@
+slug: google-skills
+name: Google Agent Skills
+repo: google/skills
+category: dev
+uses:
+- coding
+- agent
+tagline: Google CloudやAI製品の使い方を、エージェントに教える公式スキル集
+what: Googleが公開するAgent Skills。Cloudの認証、構成、データ／AIソリューションなど、Google製品向けの手順をスキルとしてインストールし、対応エージェントから呼び出せる。
+goodFor:
+- GCP上の構築をエージェントに案内させる
+- Google公式の手順をエージェントに固定する
+ease:
+  level: 5
+  text: npx のインストーラでスキルを選び、対象エージェントに入れる。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-23）'
+  url: https://x.com/so_ainsight/status/2058156503337754744
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 21375
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

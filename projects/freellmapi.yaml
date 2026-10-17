@@ -1,0 +1,30 @@
+slug: freellmapi
+name: FreeLLMAPI
+repo: tashfeenahmed/freellmapi
+homepage: https://freellmapi.co
+category: local-llm
+uses:
+- local-llm
+- agent
+tagline: 多数の無料LLM枠を束ね、OpenAI互換の一本のAPIとして使うルーター
+what: 複数プロバイダの無料枠や互換エンドポイントを集約し、/v1 互換APIとして公開する。レート制限時のフェイルオーバーやキー暗号化、利用量の追跡を行う。セルフホストでき、有料のカタログ更新プランもある。
+goodFor:
+- 無料枠を組み合わせて試作コストを下げる
+- コーディングエージェントに安い／無料モデルを繋ぐ
+ease:
+  level: 3
+  text: リポジトリを起動してプロバイダキーを登録する。運用には各社の利用規約確認が必要。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-25）'
+  url: https://x.com/so_ainsight/status/2058853149885308984
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 36467
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

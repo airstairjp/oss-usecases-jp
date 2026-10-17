@@ -1,0 +1,40 @@
+slug: comfyui
+name: ComfyUI
+repo: Comfy-Org/ComfyUI
+homepage: https://www.comfy.org/
+category: content
+uses:
+- writing
+- automation
+tagline: 画像・動画生成の処理をノードでつなぐ、モジュール型のAI制作エンジン
+what: 拡散モデルなどの画像・動画生成を、ノード（部品）をつないだグラフとして組み立てるUIとバックエンド。ワークフローをファイルとして保存・共有・再利用でき、API経由でのバッチ実行にも向く。クリエイティブ制作の現場で「一発生成」ではなく、再現可能なパイプラインとして使われる。
+goodFor:
+- 画像・動画生成の社内パイプライン化
+- 同じ品質のアセットを大量に繰り返す制作
+cases:
+- title: Series Entertainmentが、ゲーム・動画制作の基盤に採用
+  summary: キャラクター作成から動画出力までの再現可能なパイプラインをComfyUI上に構築。公式事例では10万点超のアセット制作やNetflix向けゲーム出荷を支えたとし、従来の手作業に比べ最大約180倍速いとしている。
+  source:
+    name: Comfy公式 導入事例（英語）
+    url: https://comfy.org/customers/series-entertainment/
+- title: Silverside AIが、Super Bowl広告の制作に利用
+  summary: SvedkaのAI生成スーパーボウル広告で、キャラクター・世界観・振付を分けて制御するComfyUIワークフローを構築。従来半年規模の制作を約1か月に圧縮したと紹介されている。
+  source:
+    name: Comfy公式 導入事例（英語）
+    url: https://comfy.org/customers/svedka-silverside/
+ease:
+  level: 3
+  text: デスクトップ版やGitからの導入がある。GPUが必要で、ノードの理解に慣れがいる。
+license:
+  spdx: GPL-3.0
+  name: GNU GPL v3.0
+  note: 利用は自由。改変したものを配布する場合は、ソースコードの公開とGPLの継承が必要。
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-06）'
+  url: https://x.com/so_ainsight/status/2051965269975900331
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 138013
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

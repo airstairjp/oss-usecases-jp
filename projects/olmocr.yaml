@@ -1,0 +1,30 @@
+slug: olmocr
+name: olmOCR
+repo: allenai/olmocr
+homepage: https://olmocr.allenai.org/
+category: docs
+uses:
+- docs
+- rag
+tagline: PDFや画像文書を、読み順を保ったきれいなテキストへ落とすAllen AIのOCRツールキット
+what: Allen Institute for AIの文書線形化ツール。数式・表・手書き・段組みを扱い、ヘッダ／フッタ除去や自然な読み順を目指す。7B級VLMベースでGPUが必要。ベンチマーク一式も同梱。
+goodFor:
+- 学術PDFや複雑レイアウトのテキスト化
+- OCR品質をベンチで比較したいとき
+ease:
+  level: 2
+  text: GPUとDocker／Python環境が必要。デモサイトもある。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-30）'
+  url: https://x.com/so_ainsight/status/2071763213419790695
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 19751
+  pushedAt: 2026-03-26
+  fetchedAt: 2026-10-18

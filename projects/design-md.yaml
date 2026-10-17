@@ -1,0 +1,31 @@
+slug: design-md
+name: DESIGN.md
+repo: google-labs-code/design.md
+homepage: https://stitch.withgoogle.com/docs/design-md/specification
+category: content
+uses:
+- writing
+- coding
+tagline: デザインシステムの見た目を、コーディングエージェントが読める1ファイルに落とす仕様
+what: 色・タイポ・角丸・コンポーネントなどをYAMLトークンと、なぜその値かの説明文で書く DESIGN.md 形式。エージェントがUIを実装するときの共通の見た目の根拠になる。Lintや差分比較のツールも同梱。
+goodFor:
+- AIにUIを作らせる前にデザイン制約を固定する
+- デザインシステムのドキュメントを機械可読にする
+ease:
+  level: 5
+  text: 仕様に沿って DESIGN.md を書き、npm の検証ツールでチェックできる。
+  install: npm install @google/design.md
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-23）'
+  url: https://x.com/so_ainsight/status/2047299599967383730
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 28401
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

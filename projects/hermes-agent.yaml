@@ -1,0 +1,31 @@
+slug: hermes-agent
+name: Hermes Agent
+repo: NousResearch/hermes-agent
+homepage: https://hermes-agent.nousresearch.com
+category: ai-app
+uses:
+- agent
+- automation
+tagline: 経験からスキルを作り、会話をまたいで学習し続ける自己改善型エージェント
+what: Nous Research製のエージェント。複雑な作業のあとでスキルを自分で作り、使いながら改善し、過去の会話を検索して思い出す。Telegram・Discord・Slack・WhatsApp・CLIなど複数の入り口から同じゲートウェイで動かせ、ローカルからクラウドVMまで実行場所を選べる。モデルはNous
+  Portal・OpenRouter・OpenAIなどに切り替え可能。
+goodFor:
+- 常駐の個人／チーム向けエージェントを作りたいとき
+- チャットアプリからサーバー上の作業を任せたいとき
+ease:
+  level: 3
+  text: CLIから導入し、モデルとメッセージング連携を設定する。VPSやDockerでの常駐運用が前提になりやすい。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-02）'
+  url: https://x.com/so_ainsight/status/2050590907444203666
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 254592
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

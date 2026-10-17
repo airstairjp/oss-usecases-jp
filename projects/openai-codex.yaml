@@ -1,0 +1,29 @@
+slug: openai-codex
+name: Codex CLI
+repo: openai/codex
+category: dev
+uses:
+- coding
+tagline: 手元のターミナルで動く、OpenAI製のコーディングエージェント
+what: OpenAIが公開しているローカル実行のコーディングエージェント（CLI）。プロジェクト内で指示を出し、コードの調査・変更を進められる。ChatGPTプランでのサインインや、IDE拡張・デスクトップアプリ版への導線もある。
+goodFor:
+- ターミナル中心のAIコーディング
+- OpenAIのモデルでローカルにエージェントを回したいとき
+ease:
+  level: 4
+  text: インストーラまたはパッケージマネージャで入れ、codex コマンドで開始。
+  install: （macOS/Linux）公式のインストールスクリプトを実行
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-11）'
+  url: https://x.com/so_ainsight/status/2053837888228634721
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 129615
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

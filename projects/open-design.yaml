@@ -1,0 +1,31 @@
+slug: open-design
+name: OpenDesign
+repo: nexu-io/open-design
+homepage: https://open-design.ai
+category: content
+uses:
+- writing
+- agent
+tagline: デザインシステムに沿ったプロトタイプを、エージェントと一緒に作る共同作業ワークスペース
+what: ブリーフから始めて、コーディングエージェントやクラウド上のエージェントでデザインシステム準拠のプロトタイプを作り、チームでフィードバックしながら refinement するワークスペース。スキル・テンプレ・プラグインを拡張できる。Apache
+  2.0。
+goodFor:
+- デザインシステムの試作をエージェントに任せたいとき
+- スライドや画像、モーションも同じ場で作りたいとき
+ease:
+  level: 3
+  text: デスクトップアプリやクラウド版がある。セルフホストはリポジトリの手順に従う。
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-01）'
+  url: https://x.com/so_ainsight/status/2050062774802563425
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 101857
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

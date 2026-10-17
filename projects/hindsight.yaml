@@ -1,0 +1,29 @@
+slug: hindsight
+name: Hindsight
+repo: vectorize-io/hindsight
+homepage: https://hindsight.vectorize.io/
+category: ai-app
+uses:
+- agent
+tagline: 思い出すだけでなく、経験から学ぶことに焦点を当てたエージェント記憶システム
+what: 会話履歴の再現だけでなく、エージェントが時間をかけて学習・更新していくためのメモリ基盤。LongMemEvalなどで高い精度を報告し、LLMラッパー、MCP、各種コーディングエージェントへの組み込み方を用意している。
+goodFor:
+- 長期運用するエージェントの記憶層
+- 単なるRAGでは足りない継続学習が必要なとき
+ease:
+  level: 3
+  text: サーバーまたは組み込みクライアントから始められる。クラウド版もある。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-10-01）'
+  url: https://x.com/so_ainsight/status/2105495430314565960
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 50741
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

@@ -1,0 +1,29 @@
+slug: agency-agents
+name: The Agency
+repo: msitarzewski/agency-agents
+category: dev
+uses:
+- coding
+- agent
+tagline: フロントからマーケまで、職種別の人格つきAIエージェント定義を集めたカタログ
+what: 各領域の専門家として振る舞うエージェント人格（プロンプトと進め方）を集めたコレクション。デスクトップアプリからClaude CodeやCursorなどにワンクリック導入でき、スクリプトでの一括導入も可能。
+goodFor:
+- 用途別にエージェントの役割をすぐ試したいとき
+- チームで共通のエージェント定義を配りたいとき
+ease:
+  level: 5
+  text: アプリまたはリポジトリのインストーラで、対応エージェントに流し込める。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-05-03）'
+  url: https://x.com/so_ainsight/status/2050772093575544918
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 160780
+  pushedAt: 2026-10-15
+  fetchedAt: 2026-10-18

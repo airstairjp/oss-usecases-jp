@@ -1,0 +1,29 @@
+slug: obsidian-skills
+name: Obsidian Skills
+repo: kepano/obsidian-skills
+category: dev
+uses:
+- coding
+- writing
+tagline: ObsidianのMarkdownやCanvasを、エージェントが正しく扱えるようにする公式系スキル
+what: Obsidian創設者kepano氏らが配布するAgent Skills。ウィキリンクやコールアウト、Bases、JSON Canvas、CLI操作など、Obsidian特有の記法と操作をエージェントに教える。
+goodFor:
+- Obsidianボルトをエージェントで編集・整備する
+- セカンドブレイン運用の自動化
+ease:
+  level: 5
+  text: マーケットプレイスやnpx skills、手動コピーで導入できる。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-06-07）'
+  url: https://x.com/so_ainsight/status/2063594423817216405
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 49681
+  pushedAt: 2026-09-15
+  fetchedAt: 2026-10-18

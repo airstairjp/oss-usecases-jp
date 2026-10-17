@@ -1,0 +1,29 @@
+slug: vibevoice
+name: VibeVoice
+repo: microsoft/VibeVoice
+homepage: https://microsoft.github.io/VibeVoice/
+category: content
+uses:
+- writing
+tagline: 長尺音声の文字起こしや多言語音声AIを扱う、Microsoft発のオープンソース音声スタック
+what: Microsoftが公開する音声AIのオープンソース群。長時間音声を一括で「誰が・いつ・何を」構造化して起こすASR、ストリーミング認識、エッジ向け量子化、多言語対応などを含む。研究・製品組み込みの両方を想定。
+goodFor:
+- 会議・配信の長尺文字起こし
+- オンプレ／エッジでの音声認識
+ease:
+  level: 2
+  text: モデルと推論環境（GPU等）の準備が必要。TransformersやAzure経由の利用もある。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-04-26）'
+  url: https://x.com/so_ainsight/status/2048416573753622895
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 54856
+  pushedAt: 2026-10-08
+  fetchedAt: 2026-10-18

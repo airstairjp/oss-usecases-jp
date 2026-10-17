@@ -1,0 +1,29 @@
+slug: gstack
+name: gstack
+repo: garrytan/gstack
+category: dev
+uses:
+- coding
+- sdd
+tagline: YCのGarry Tan氏が公開する、CEO／デザイナー視点のClaude Code用ツール群
+what: Y CombinatorのGarry Tan氏が自身のClaude Code環境として公開している意見の強いツール一式。プロダクト判断・デザイン・実装の進め方をエージェントに仕込み、「一人でチーム並みに出荷する」ための運用をパッケージ化している。
+goodFor:
+- 個人開発者がエージェント駆動でプロダクトを高速に回したいとき
+- CEO／PdM視点のレビューをエージェントに入れたいとき
+ease:
+  level: 4
+  text: リポジトリの手順に従いClaude Codeへ導入する。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-03-14）'
+  url: https://x.com/so_ainsight/status/2032820382127055145
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 136747
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18
