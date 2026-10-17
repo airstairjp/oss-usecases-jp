@@ -216,6 +216,12 @@ for (const p of projects) {
   const ld = [
     { '@context': 'https://schema.org', '@type': 'SoftwareSourceCode', name: p.name, description: p.tagline, codeRepository: `https://github.com/${p.repo}`, url: abs(`/projects/${p.slug}/`), ...(p.homepage ? { sameAs: p.homepage } : {}), license: p.license.spdx && !['NOASSERTION', 'none'].includes(p.license.spdx) ? `https://spdx.org/licenses/${p.license.spdx}.html` : undefined, inLanguage: 'ja', dateModified: fmtDate(p.checked || p.added), interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/LikeAction', userInteractionCount: p.github.stars, description: `GitHub stars (${fetched} 取得)` } },
     breadcrumbLd(crumbs),
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
+      [`${p.name}とは？何ができる？`, p.what],
+      [`${p.name}のライセンスは？`, `${p.license.name}（SPDX: ${p.license.spdx}）。${p.license.note}`],
+      [`${p.name}の導入は手軽？`, `${EASE[p.ease.level]}（5段階中${p.ease.level}）。${p.ease.text}`],
+      [`${p.name}のGitHubスター数と最終更新日は？`, `GitHubスター数は${fmtNum(p.github.stars)}、最終pushは${fmtDate(p.github.pushedAt)}（いずれも${fetched}取得）。`],
+    ].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: String(a).trim() } })) },
   ];
   const others = projects.filter((q) => q.category === p.category && q.slug !== p.slug);
   const related = others.length ? others : projects.filter((q) => q.slug !== p.slug && q.uses.some((u) => p.uses.includes(u))).slice(0, 3);

@@ -1,0 +1,29 @@
+slug: paperless-ngx
+name: Paperless-ngx
+repo: paperless-ngx/paperless-ngx
+homepage: https://docs.paperless-ngx.com
+category: docs
+uses:
+- docs
+- self-host
+tagline: 紙の書類をスキャンして文字認識し、検索できるアーカイブにする自己ホスト型の文書管理システム
+what: >-
+  スキャンした書類やPDFを取り込み、文字認識（OCR）で本文を検索できるようにしたうえで、タグ・取引先・書類の種類などで整理して保管する文書管理システム。自分のサーバーやNASにDocker Composeで立てて使う。元祖のPaperless、Paperless-ngの公式な後継として、コミュニティで開発が続いている。公式サイトにデモ環境もある。
+goodFor:
+- 領収書・請求書・契約書などの紙の書類を減らし、あとから全文検索したいとき
+- 書類のデータを外部のクラウドに預けず、自社や自宅のサーバーで管理したいとき
+cases: []
+ease:
+  level: 3
+  text: 公式のインストールスクリプトでDocker Composeの環境を作れる。常時動かすサーバーと、スキャナーや取り込み用フォルダの準備が必要。
+  install: （Docker Compose）公式のインストールスクリプトを実行
+license:
+  spdx: GPL-3.0
+  name: GNU GPL v3.0
+  note: 利用は自由。改変したものを配布する場合は、ソースコードの公開とGPLの継承が必要。
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 46810
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-18

@@ -1,0 +1,41 @@
+slug: hyperframes
+name: HyperFrames
+repo: heygen-com/hyperframes
+homepage: https://hyperframes.dev
+category: content
+uses:
+- video
+- agent
+- coding
+tagline: HTMLとCSSで組んだ画面を、そのままMP4動画に書き出せるエージェント向けの動画フレームワーク
+what: >-
+  動画編集ソフトで組むかわりに、HTML・CSS・画像や動画の素材・アニメーションで1本の動画を組み立て、MP4に書き出すフレームワーク。同じ入力からは毎回同じ動画が出るように作られている。CLIで使えるほか、Claude CodeやCodex、Cursorなどのコーディングエージェントに専用スキルを入れて「10秒の製品紹介動画を作って」のように頼む使い方を想定している。開発・公開はHeyGen。
+goodFor:
+- 製品紹介やSNS向けの短い動画を、構成から書き出しまでAIに任せたいとき
+- 図表や文字アニメーションの入った説明動画を、コードで管理して作り直しやすくしたいとき
+- 同じ型の動画を、文言や素材だけ差し替えて量産したいとき
+notFor:
+- 実写素材のカット編集が中心の作業（一般的な動画編集ソフトのほうが向く）
+cases:
+- title: HeyGenが、自社のローンチ動画をClaude CodeとHyperFramesで制作
+  summary: >-
+    開発元のHeyGenは、HyperFramesを公開した際の告知動画そのものをClaude CodeとHyperFramesで作ったとXで発表し、フレームワークをオープンソースとして配布した。
+  source: {name: HeyGen公式のX投稿（2026-04-16・英語）, url: "https://x.com/HeyGen/status/2044827454460871072"}
+- title: 同じ指示でClaude CodeとCodexに宣伝動画を作らせて比較
+  summary: >-
+    X利用者（@Saccc_c）が、Teslaの宣伝動画という同じお題をHyperFramesと組み合わせたClaude CodeとCodexに渡し、仕上がりを並べた約40秒の比較動画を公開。投稿者はClaude Code側の出来が大きく上回ったと報告している（当サイトでは未検証）。
+  source: {name: "@Saccc_c のX投稿（2026-05-11・中国語）", url: "https://x.com/Saccc_c/status/2053681523824677019"}
+ease:
+  level: 4
+  text: コーディングエージェントにプラグインかスキルを入れれば、指示文だけで試せる。Node.jsの実行環境が必要で、凝った演出には試行錯誤が要る。
+  install: npx skills add heygen-com/hyperframes
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 65934
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

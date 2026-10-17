@@ -1,0 +1,32 @@
+slug: orca
+name: Orca
+repo: stablyai/orca
+homepage: https://www.onorca.dev
+category: dev
+uses:
+- coding
+- agent
+tagline: Claude CodeやCodexなど複数のコーディングエージェントを、並べて同時に走らせて管理するアプリ
+what: >-
+  Codex、Claude Code、OpenCodeなどのコーディングエージェントを、それぞれ別のgit worktree（作業用に分けたディレクトリ）で同時に動かし、1つの画面で進み具合を追えるアプリ。1つの指示を複数のエージェントに配って結果を比べ、良いものを採用する使い方ができる。各エージェントは自分の契約プランのまま使え、スマホアプリから完了通知を受けたり追加の指示を送ったりもできる。
+goodFor:
+- 同じ課題を複数のエージェントに解かせて、出来の良い案を選びたいとき
+- 複数の作業を並行で進め、エージェントの状況を1か所で見たいとき
+- 外出中もスマホからエージェントの進み具合を確認したいとき
+cases: []
+refs:
+- name: '@so_ainsight の紹介投稿（2026-09-28）'
+  url: https://x.com/so_ainsight/status/2104408265698558378
+ease:
+  level: 4
+  text: デスクトップアプリを入れ、使いたいエージェントのCLIを用意すれば始められる。worktreeの使い分けにはgitの基本知識があると楽。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+added: '2026-10-18'
+checked: '2026-10-18'
+github:
+  stars: 95316
+  pushedAt: 2026-10-18
+  fetchedAt: 2026-10-18

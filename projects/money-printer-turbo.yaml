@@ -3,6 +3,7 @@ name: MoneyPrinterTurbo
 repo: harry0703/MoneyPrinterTurbo
 category: content
 uses:
+- video
 - automation
 - writing
 tagline: テーマを入れると、台本・素材・字幕・BGMまでまとめて短尺動画を作るツール
@@ -24,6 +25,6 @@ refs:
 added: '2026-10-18'
 checked: '2026-10-18'
 github:
-  stars: 132288
+  stars: 132373
   pushedAt: 2026-10-17
   fetchedAt: 2026-10-18

@@ -4,6 +4,7 @@ repo: OpenCut-app/OpenCut
 homepage: https://opencut.app
 category: content
 uses:
+- video
 - writing
 - agent
 tagline: Web／デスクトップ／モバイル向けの、CapCut代替を目指すOSS動画エディタ
@@ -25,6 +26,6 @@ refs:
 added: '2026-10-18'
 checked: '2026-10-18'
 github:
-  stars: 95048
+  stars: 95095
   pushedAt: 2026-09-24
   fetchedAt: 2026-10-18

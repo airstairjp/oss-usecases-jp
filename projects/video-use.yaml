@@ -4,6 +4,7 @@ repo: browser-use/video-use
 homepage: https://video-use.com
 category: content
 uses:
+- video
 - writing
 - agent
 tagline: 素材フォルダを渡すと、カット・色補正・字幕までエージェントが仕上げる動画編集スキル
@@ -25,6 +26,6 @@ refs:
 added: '2026-10-18'
 checked: '2026-10-18'
 github:
-  stars: 29169
+  stars: 29193
   pushedAt: 2026-10-09
   fetchedAt: 2026-10-18
