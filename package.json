@@ -1,0 +1,14 @@
+{
+  "name": "oss-usecases-jp",
+  "private": true,
+  "type": "module",
+  "description": "OSS活用事例集（日本語）- static site generated from projects/*.yaml",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "stars": "node scripts/update-stars.mjs",
+    "deploy": "node scripts/build.mjs && npx --yes wrangler@4 pages deploy dist --project-name oss-usecases-jp --branch main --commit-dirty=true"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

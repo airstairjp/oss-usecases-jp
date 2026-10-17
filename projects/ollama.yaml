@@ -1,0 +1,39 @@
+slug: ollama
+name: Ollama
+repo: ollama/ollama
+homepage: https://ollama.com
+category: local-llm
+uses: [local-llm, internal-ai, self-host]
+tagline: 手元のPCやサーバーで、オープンなLLMをコマンド1つで動かすランタイム
+what: >-
+  Qwen・Gemma・gpt-oss・DeepSeekなど、重みが公開されているLLMをダウンロードしてローカルで実行するためのツール。
+  ollama run <モデル名> だけで対話でき、裏ではAPIサーバーとしても動くので、チャット画面や自作アプリ、コーディングツールから呼び出せる。
+  入力したデータが外部のAIサービスに送られない構成を作りやすい。
+goodFor:
+  - 機密データを外部APIに送らずにLLMを試したい・使いたい場面
+  - 社内や研究室のGPUマシンを共用のLLMサーバーにする用途
+  - API料金をかけずにプロンプトやアプリを試作する用途
+cases:
+  - title: アンドラ大学が、学内向けのローカルLLMサーバーを構築
+    summary: >-
+      RTX 4090搭載のサーバーにOllama（会話モデルはGemma2 27B）とOpen WebUIなどを組み合わせ、学内の利用が外部に出ない環境を用意。
+      論文では、利用者はプライバシーと使いやすさを評価した一方、回答の質は商用サービスに及ばない点も挙げている。
+    source: {name: アンドラ大学の事例論文（英語・PDF）, url: "https://www.aleixdorca.com/documents/DORCABLEDAICERI24.pdf"}
+  - title: タフツ大学が、HPCクラスタ上で研究者向けチャットボットを提供
+    summary: >-
+      大学の計算クラスタ上でOllamaとOpen WebUIを組み合わせた「Research Chatbot」を提供。入力したデータはクラスタ内にとどまると案内している。
+    source: {name: タフツ大学 研究技術ガイド（英語）, url: "https://rtguides.it.tufts.edu/ai/ai-tools/ollama-owui.html"}
+ease:
+  level: 5
+  text: インストーラを入れて ollama run <モデル名> と打つだけ。快適に動かすにはモデルの大きさに見合ったメモリ・GPUが必要。
+  install: curl -fsSL https://ollama.com/install.sh | sh && ollama run gemma3
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由。動かす各モデルには、それぞれ別のライセンスがある点に注意。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 183582
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

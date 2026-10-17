@@ -1,0 +1,44 @@
+slug: n8n
+name: n8n
+repo: n8n-io/n8n
+homepage: https://n8n.io
+category: workflow
+uses: [automation, agent, self-host]
+tagline: 400以上のサービスをノードでつなぐ、自社サーバーにも置けるワークフロー自動化ツール
+what: >-
+  SaaSやデータベース、社内APIなどをノード（部品）として画面上でつなぎ、定型業務を自動で流すためのツール。
+  ノーコードで組めるだけでなく、途中にJavaScriptやPythonのコードを差し込める。LLMを呼び出すAIエージェント用のノードも
+  そろっており、問い合わせの仕分けや資料の下書きなど「AIを挟んだ業務フロー」を作りやすい。クラウド版と、自社サーバーで動かすセルフホスト版がある。
+goodFor:
+  - SaaS間のデータ連携・通知・転記の自動化
+  - 顧客データを外部クラウドに出せない業種での業務自動化
+  - LLMを組み込んだ社内ワークフロー（下書き作成・分類・要約）
+cases:
+  - title: 暗号資産取引所K33が、マネロン対策（AML）業務を自社ホストで自動化
+    summary: >-
+      ノルウェーの取引所K33（約10人）は、顧客の機密データを第三者クラウドに渡さないためにn8nを自社サーバーに置き、IP制限とSSOをかけて運用。
+      AMLやKYC（本人確認）まわりの手作業を自動化した。公式事例では、社員の8割が自分でワークフローを作るようになったとしている。
+    source: {name: n8n公式 導入事例（英語）, url: "https://n8n.io/case-studies/k33/"}
+  - title: Field Aerospaceが、政府調達の提案書の下書きを自動化
+    summary: >-
+      社内Webアプリから募集要項をアップロードすると、セルフホストのn8nがLLMで提案書の下書きを返す仕組みを構築。毎日の募集情報の取得と採点も自動化した。
+      公式事例では、約2週間かかっていた初稿が約25分で「8割の出来」になり、既存ツール2つの置き換えで年約3万ドルを削減したとしている。
+    source: {name: n8n公式 導入事例（英語）, url: "https://n8n.io/case-studies/field-aerospace/"}
+  - title: 市場調査会社Quidが、社内データ基盤とLLMをつなぐ層として利用
+    summary: >-
+      4つのセルフホスト環境（開発・本番を分離）で、自社の分析エンジンや外部API、複数のLLMをn8nでつなぎ、アナリストのレポート作成を短縮している。
+    source: {name: n8n公式 導入事例（英語）, url: "https://n8n.io/case-studies/quid/"}
+ease:
+  level: 3
+  text: Docker 1行で試せて、クラウド版ならインストール不要。本番で自社運用するならDB・バックアップ・認証の設定が必要。
+  install: docker run -it --rm -p 5678:5678 docker.n8n.io/n8nio/n8n
+license:
+  spdx: NOASSERTION
+  name: Sustainable Use License（フェアコード）
+  note: 自社業務での利用や改変は可能だが、n8nそのものを他社向けの有償サービスとして提供することなどは制限される。OSI定義のオープンソースではない点と、ファイル名に .ee を含む部分は別の企業向けライセンスである点に注意。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 207785
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

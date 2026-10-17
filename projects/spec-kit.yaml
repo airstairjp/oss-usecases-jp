@@ -1,0 +1,40 @@
+slug: spec-kit
+name: Spec Kit
+repo: github/spec-kit
+homepage: https://github.github.com/spec-kit/
+category: dev
+uses: [sdd, coding]
+tagline: AIにいきなりコードを書かせず、仕様→計画→タスク→実装の順に進めさせるGitHub製ツールキット
+what: >-
+  GitHubが公開している「仕様駆動開発（Spec-Driven Development）」のためのツールキット。specify CLIでプロジェクトに導入すると、
+  Claude CodeやGitHub Copilotなどのコーディングエージェントに、仕様の作成・技術計画・タスク分解・実装を順に進めるスラッシュコマンドが追加される。
+  あいまいな指示のまま実装に入るのを防ぎ、仕様書や計画をファイルとして残せる。
+goodFor:
+  - 数日〜数週間かかる機能をAIと一緒に作るとき
+  - 要件の抜けを実装前に洗い出したいとき
+  - チームでAIの作業内容（仕様・計画）を文書として共有したいとき
+notFor:
+  - 数行で終わる小さな修正（手順と生成物が重くなりやすい）
+cases:
+  - title: XB Softwareが、大規模レガシーシステムの開発で試行
+    summary: >-
+      既存の大きなコードベースでSpec Kitを使い、1週間規模のタスクがおよそ半分の時間で終わったと報告。AIが既存の書き方を踏襲し、要件の抜けも見つけた一方、結合部分の修正や人によるレビューは引き続き必要だったとしている。
+    source: {name: XB Software 自社ブログ（英語）, url: "https://xbsoftware.com/blog/ai-in-legacy-systems-spec-driven-development/"}
+  - title: martinfowler.comで、Kiro・Tesslと比較した評価記事
+    summary: >-
+      仕様駆動開発ツール3つを実際に試して比較。小さな修正に対しては生成される文書が多すぎる、仕様と実装がずれる余地が残るなど、使いどころの注意点をまとめている（検証記事）。
+    source: {name: martinfowler.com（英語）, url: "https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html"}
+ease:
+  level: 4
+  text: uv が入っていればコマンド1つでプロジェクトに導入できる。使いこなすには、仕様をこまめに更新する運用が必要。
+  install: uvx --from git+https://github.com/github/spec-kit.git specify init my-project
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 141627
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

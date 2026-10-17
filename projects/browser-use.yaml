@@ -1,0 +1,37 @@
+slug: browser-use
+name: Browser Use
+repo: browser-use/browser-use
+homepage: https://browser-use.com
+category: web-data
+uses: [browser, scraping, testing, agent]
+tagline: 指示を出すとLLMがブラウザを操作してタスクを進める、Python製のブラウザエージェント
+what: >-
+  LLMにブラウザを操作させるためのPythonライブラリ。「このサイトで○○を調べて表にまとめて」のような指示を渡すと、
+  ページの内容を読み取り、クリックや入力を繰り返しながらタスクを進める。手元のChromeでも、クラウド上のブラウザでも動かせる。
+goodFor:
+  - APIがないWebサービスの操作の自動化
+  - 画面を実際に操作するE2Eテスト・動作確認
+  - 複数サイトをまたぐ調べもの・情報収集
+cases:
+  - title: nopStationが、ブラウザ操作でテストするAIのQAエージェントを構築
+    summary: >-
+      ECサイト構築を手がけるnopStationは、Browser Useの上にAIのQAエージェントを作り、購入手続きなどの画面テストを自動化してリリース作業の進め方を変えたと自社ブログで紹介している。
+    source: {name: nopStation 自社ブログ（英語）, url: "https://www.nop-station.com/how-we-built-an-ai-qa-agent-that-changed-our-release-cycle"}
+  - title: New Generationが、ECサイトの「AIエージェント対応度」を大量に採点
+    summary: >-
+      ECサイトがAIエージェントから使いやすいかを評価するため、Browser Useで大量のブラウザタスクを並列実行している（Browser Use側の事例記事）。
+    source: {name: Browser Use公式 事例記事（英語）, url: "https://browser-use.com/posts/new-generation"}
+ease:
+  level: 4
+  text: pip で入れて、LLMのAPIキー（またはローカルLLM）を用意すれば数行で動く。安定運用には失敗時の再試行や監視が必要。
+  install: pip install browser-use
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由。クラウドブラウザなどの有料サービスは別契約。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 118294
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

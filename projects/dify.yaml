@@ -1,0 +1,40 @@
+slug: dify
+name: Dify
+repo: langgenius/dify
+homepage: https://dify.ai
+category: ai-app
+uses: [internal-ai, rag, agent, self-host]
+tagline: チャットボット・RAG・AIワークフローをブラウザ上で組み立てて公開できるLLMアプリ開発基盤
+what: >-
+  LLMを使ったアプリ（社内チャットボット、文書を検索して答えるRAG、複数ステップのAIワークフロー、エージェント）を、
+  ブラウザの画面で組み立ててWebアプリやAPIとして公開できる基盤。使うモデルの切り替え、ナレッジベース（文書の取り込み）、
+  プラグイン、利用ログの確認まで一式そろう。クラウド版と、Docker Composeで動かすセルフホスト版がある。
+goodFor:
+  - 現場の担当者が自分で社内向けAIアプリを作る体制づくり
+  - 社内文書を使ったQ&Aボット（RAG）
+  - モデルを差し替えながらプロンプトやワークフローを試作する用途
+cases:
+  - title: 価格.com（カカクコム）が、社員主導で約950の社内AIアプリを作成
+    summary: >-
+      企業向け版（Dify Enterprise）をGoogle CloudのGKE上で運用し、部署ごとにワークスペースを分けて現場が自分でAIアプリを作れるようにした。
+      公式ブログでは、社員の75%が登録して約950の社内アプリが生まれ、商品データ抽出アプリは3時間で稼働したとしている。
+    source: {name: Dify公式ブログ（英語）, url: "https://dify.ai/blog/kakaku-accelerates-ai-adoption-with-dify-fast-secure-and-scalable"}
+  - title: 米国の教育テスト機関ETSが、約2,000人の社内AI基盤として運用
+    summary: >-
+      試験問題の文法・内容・公平性をチェックするワークフローなどを構築。Difyの公式ページでは、要件の相談から試作の提示までが約30分になり、
+      300人以上の職員が自分でAIアプリを作って使っているとしている。
+    source: {name: Dify公式 業界別ページ（英語）, url: "https://dify.ai/solutions/assessment-and-testing"}
+ease:
+  level: 3
+  text: リポジトリの docker ディレクトリで docker compose up すれば一式が起動する。クラウド版ならすぐ試せる。社内展開時はSSOや権限設計を考える必要あり。
+  install: cd dify/docker && cp .env.example .env && docker compose up -d
+license:
+  spdx: NOASSERTION
+  name: Dify Open Source License（Apache 2.0＋追加条件）
+  note: 商用利用は可能。ただし、許可なくマルチテナントのSaaSとして提供すること、管理画面などのロゴ・著作権表示を消すことは禁止されている。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 158702
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

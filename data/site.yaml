@@ -1,0 +1,8 @@
+name: OSS活用事例集
+tagline: AI・開発・自動化・業務ツールのオープンソースを、実際の使われ方と一緒に日本語で紹介
+description: GitHubで公開されているAI・開発・業務自動化系のオープンソース（OSS）を1プロジェクト1ページで紹介。何ができるか、向いている用途、出典つきの活用事例、導入の手軽さ、ライセンス、GitHubスター数を日本語でまとめています。
+url: https://oss-usecases-jp.pages.dev
+lang: ja
+sister:
+  - name: AI社員名鑑（AIエージェント活用事例集）
+    url: https://agent-usecases-jp.pages.dev

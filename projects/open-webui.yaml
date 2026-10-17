@@ -1,0 +1,37 @@
+slug: open-webui
+name: Open WebUI
+repo: open-webui/open-webui
+homepage: https://openwebui.com
+category: ai-app
+uses: [internal-ai, local-llm, rag, self-host]
+tagline: ChatGPTのようなチャット画面を自前で立てる、ユーザー管理つきのWeb UI
+what: >-
+  OllamaやOpenAI互換APIにつないで使う、ブラウザ向けのチャット画面。ユーザー管理と権限設定、文書をアップロードして質問するRAG、
+  Web検索、画像生成との連携、複数モデルの同時比較などを備える。組織内に「自前のChatGPT」を用意したいときの定番の組み合わせ先。
+goodFor:
+  - 社内・学内向けに、ログインつきのAIチャット環境を用意する
+  - ローカルLLM（Ollama）に使いやすい画面をつける
+  - 複数のモデルを同じ画面で比べる
+cases:
+  - title: アンドラ大学が、要件を満たす唯一の画面として採用
+    summary: >-
+      ユーザー管理、OllamaとAPIの両対応、文書やWebページを使った会話、カタルーニャ語対応などの要件を並べた結果、Open WebUIを採用したと論文で説明している。
+    source: {name: アンドラ大学の事例論文（英語・PDF）, url: "https://www.aleixdorca.com/documents/DORCABLEDAICERI24.pdf"}
+  - title: ストーニーブルック大学が、GPUクラスタのアプリとして提供
+    summary: >-
+      研究者がOpen OnDemand（クラスタのWeb窓口）からOllama＋Open WebUIを起動できるようにし、モデルやチャット履歴を各自のディレクトリに保存して使い回せる構成にしている。
+    source: {name: ストーニーブルック大学 研究計算ドキュメント（英語）, url: "https://rci.stonybrook.edu/docs/ondemand-ollama"}
+ease:
+  level: 4
+  text: Dockerで1コンテナ起動するか、pip install open-webui で動く。組織で使うなら認証や保存先の設計が必要。
+  install: docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main
+license:
+  spdx: NOASSERTION
+  name: Open WebUI License（BSD-3条項ベース＋ブランド条件）
+  note: BSD-3条項をベースに、一定規模を超える利用などでOpen WebUIの名称・ロゴ表示を消したり変えたりすることを制限する条件が追加されている。再配布や白ラベル化を考える場合は原文を確認。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 155955
+  pushedAt: 2026-10-16
+  fetchedAt: 2026-10-17

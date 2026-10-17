@@ -1,0 +1,33 @@
+slug: postiz
+name: Postiz
+repo: gitroomhq/postiz-app
+homepage: https://postiz.com
+category: content
+uses: [sns, self-host, agent]
+tagline: 30以上のSNSへの投稿をまとめて作成・予約・分析できる、セルフホスト可能な予約投稿ツール
+what: >-
+  X・LinkedIn・Instagram・Bluesky・YouTubeなど多数のSNSに向けた投稿を、1つのカレンダーで作成・予約・公開できるツール。
+  チームでの承認フローや分析画面もあり、APIやMCP経由でAIエージェントから投稿予約をさせることもできる。
+  セルフホストすればチャンネル数やメンバー数による課金がない。
+goodFor:
+  - 複数SNSの予約投稿を1か所で管理したい場合
+  - BufferやHootsuiteなどの月額費用を抑えたい場合
+  - AIエージェントにSNS投稿の下書き・予約を任せる仕組みづくり
+cases:
+  - title: 個人開発者が、Bufferの代わりに月15ドル程度でセルフホスト
+    summary: >-
+      必要なチャンネル数でBufferの見積もりが月100ドル程度になったため、安価なサーバーにPostizをセルフホストして置き換えた経緯と構成を紹介している。
+    source: {name: DEV Community（英語）, url: "https://dev.to/vikasprogrammer/buffer-wanted-100mo-so-i-self-host-postiz-for-15-dfa"}
+ease:
+  level: 2
+  text: Docker Composeで動くが、PostgreSQL・Redis・Temporalなどの構成に加え、SNSごとに開発者アプリ（OAuth）の登録が必要で準備に手間がかかる。クラウド版もある。
+license:
+  spdx: AGPL-3.0
+  name: GNU AGPL v3.0
+  note: 改変したものをネットワーク越しのサービスとして提供する場合、ソースコードの公開義務がある。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 37313
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

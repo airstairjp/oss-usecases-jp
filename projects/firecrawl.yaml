@@ -1,0 +1,38 @@
+slug: firecrawl
+name: Firecrawl
+repo: firecrawl/firecrawl
+homepage: https://firecrawl.dev
+category: web-data
+uses: [scraping, rag, agent]
+tagline: WebページをAIが読みやすいMarkdownや構造化データに変換して返すWebデータAPI
+what: >-
+  URLを渡すと、ページの本文をMarkdownや指定した形式のJSONに変換して返すツール。サイト全体のクロール、検索、
+  スクリーンショット取得にも対応する。AIエージェントやRAGに「いまのWebの情報」を渡す入口として使われる。
+  提供元のクラウドAPIが主な使い方だが、リポジトリからセルフホストもできる。
+goodFor:
+  - RAGやナレッジベースに取り込むWebページの収集
+  - AIエージェントに最新のWeb情報を読ませる
+  - 競合・見込み客などの調査の自動化
+cases:
+  - title: Credalが、月600万件超のURL取得で本番のAIエージェントを支える
+    summary: >-
+      企業向けAIエージェント基盤のCredalが、エージェントが参照するWebデータの取得にFirecrawlを使い、月600万件を超えるURLを処理していると紹介されている。
+    source: {name: Firecrawl公式ブログ（英語）, url: "https://www.firecrawl.dev/blog/credal-firecrawl-ai-agents"}
+  - title: 営業AIの11xが、見込み客リサーチを自動化
+    summary: >-
+      AI営業担当を提供する11xが、見込み客の企業サイトの調査にFirecrawlを使用。記事では累計1,100万リクエスト超、17万5,000ドメインを処理したとしている。
+    source: {name: Firecrawl公式ブログ（英語）, url: "https://www.firecrawl.dev/blog/how-11x-automates-prospect-research-with-firecrawl"}
+ease:
+  level: 4
+  text: クラウド版はAPIキーを取ればすぐ使える。セルフホストはDocker Composeで起動できるが、一部機能はクラウド版のみ。
+  install: pip install firecrawl-py
+license:
+  spdx: AGPL-3.0
+  name: GNU AGPL v3.0
+  note: 改変したものをネットワーク越しのサービスとして提供する場合、ソースコードの公開義務がある。社内利用やクラウドAPIの利用だけなら影響は小さい。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 192384
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

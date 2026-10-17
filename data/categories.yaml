@@ -1,0 +1,25 @@
+# カテゴリ定義（slug: 表示名と説明）。projects/*.yaml の category はここの slug を使う。
+- slug: ai-app
+  name: AIアプリ基盤・チャットUI
+  description: 社内チャットボットやRAGアプリを、画面操作中心で組み立てて自前で運用するためのOSS。
+- slug: local-llm
+  name: ローカルLLM
+  description: 手元のPCや自社サーバーでLLMを動かし、データを外に出さずに使うためのOSS。
+- slug: workflow
+  name: 業務自動化・ワークフロー
+  description: SaaS同士の連携や定型業務を、ノードやフローをつないで自動化するOSS。
+- slug: web-data
+  name: ブラウザ自動化・Webデータ取得
+  description: AIにブラウザを操作させたり、WebページをAIが読みやすい形に変換したりするOSS。
+- slug: dev
+  name: 開発支援・AIコーディング
+  description: コーディングエージェントの使い方を整えたり、LLMアプリの品質を測ったりする開発者向けOSS。
+- slug: docs
+  name: 文書処理
+  description: PDFやOffice文書をAIで扱える形（Markdown・JSON）に変換するOSS。
+- slug: content
+  name: コンテンツ制作・SNS運用
+  description: 文章の手直しやSNS投稿の予約など、発信まわりの作業を助けるOSS。
+- slug: infra
+  name: 業務インフラ・ファイル共有
+  description: ファイル同期など、日々の業務を支える基盤系のOSS。

@@ -1,0 +1,38 @@
+slug: activepieces
+name: Activepieces
+repo: activepieces/activepieces
+homepage: https://www.activepieces.com
+category: workflow
+uses: [automation, agent, self-host]
+tagline: ノーコードで業務フローを組める、Zapier系のオープンソース自動化ツール
+what: >-
+  トリガー（フォーム送信、決済、定時など）と各種サービスの操作を画面上でつないで、業務を自動化するツール。
+  非エンジニアでも扱いやすい画面が特徴で、連携部品（piece）はTypeScriptで追加できる。各部品をMCPサーバーとして公開し、
+  AIエージェントから呼び出す使い方にも対応している。
+goodFor:
+  - 非エンジニアの社員が自分で業務を自動化する体制づくり
+  - 決済・登録・問い合わせなどの通知や転記
+  - ZapierやMakeの代わりにセルフホストで運用したい場合
+cases:
+  - title: フィンテックのFunding Societiesが、社員主導で100以上の自動化フローを展開
+    summary: >-
+      東南アジアの中小企業向け金融サービスのFunding Societiesで、約60人の社員が部署ごとに自動化を作成し、支払書類のチェックなどを自動化。
+      公式ブログでは、合計で「ほぼ四半期分」の作業時間を削減したとしている。
+    source: {name: Activepieces公式ブログ（英語）, url: "https://www.activepieces.com/blog/entire-quarter-of-time-saved-funding-societies-success-story-with-activepieces"}
+  - title: スタートアップのDesign QAが、登録・決済・ウェイトリスト対応を自動化
+    summary: >-
+      新規登録の通知（テスト登録の除外つき）、Stripeの決済通知、ウェイトリスト登録者への案内メールとスプレッドシート記録をWebhookでつなぎ、毎日10〜20分の手作業を減らしたと紹介されている。
+    source: {name: Activepieces公式ブログ（英語）, url: "https://www.activepieces.com/blog/saas-automation"}
+ease:
+  level: 4
+  text: クラウド版ならすぐ使え、セルフホストはDockerで起動できる。画面は非エンジニア向けで覚えやすい。
+license:
+  spdx: NOASSERTION
+  name: MIT（コミュニティ版）＋企業向け部分は商用ライセンス
+  note: packages/ee などの企業向け機能のディレクトリを除き、MITライセンスで公開されている。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 25082
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

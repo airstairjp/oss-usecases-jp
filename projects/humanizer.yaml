@@ -1,0 +1,39 @@
+slug: humanizer
+name: humanizer
+repo: blader/humanizer
+homepage: https://skills.sh/blader/humanizer
+category: content
+uses: [writing]
+tagline: AIが書いた文章にありがちなクセを見つけて書き直す、エージェント用スキル
+what: >-
+  AIが生成した英語の文章によく見られる表現パターン（大げさな言い回し、決まり文句、不自然な三点並べ、過剰な見出しや太字など）を
+  チェックリストとして持ち、該当箇所を書き直させるClaude Code向けのスキル。日本語の文章にそのまま効くものではない点に注意。
+goodFor:
+  - AIで下書きした英語のブログ・メール・ドキュメントの仕上げ
+  - 文体の「AIっぽさ」を減らすチェック工程の自動化
+notFor:
+  - 事実確認（書かれている主張の正しさは検証しない）
+  - AI検出ツールの回避
+cases:
+  - title: 24本の下書きで効果を検証した記事
+    summary: >-
+      Claude Codeで24本の下書きを書き直させて比較。1行の指示だけで直すより文体上のクセは減ったが、元の下書きにあった根拠のない主張の約85%はそのまま残ったと報告している（検証記事）。
+    source: {name: hardnumbers.dev（英語）, url: "https://hardnumbers.dev/articles/blader-humanizer-benchmark-it-keeps-what-drafts-invent"}
+  - title: ブラインド比較で、品質は上がるがAI判定は変わらないという報告
+    summary: >-
+      リポジトリのissueに投稿された検証で、書き直し後の文章が品質比較では16本中16本で好まれた一方、AI検出ツールの判定結果はほとんど変わらなかったとしている。
+    source: {name: "GitHub issue #229（英語）", url: "https://github.com/blader/humanizer/issues/229"}
+ease:
+  level: 5
+  text: Claude Codeのスキルフォルダに置くだけで使える。
+  install: git clone https://github.com/blader/humanizer ~/.claude/skills/humanizer
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由。
+added: 2026-10-17
+checked: 2026-10-17
+github:
+  stars: 57745
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-17

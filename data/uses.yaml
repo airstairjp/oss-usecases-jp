@@ -1,0 +1,18 @@
+# 用途タグ定義。projects/*.yaml の uses はここの slug を使う。
+- {slug: internal-ai, name: 社内AI活用}
+- {slug: rag, name: RAG・ナレッジ検索}
+- {slug: agent, name: AIエージェント構築}
+- {slug: automation, name: 業務自動化}
+- {slug: self-host, name: セルフホスト}
+- {slug: local-llm, name: ローカルLLM}
+- {slug: browser, name: ブラウザ自動化}
+- {slug: scraping, name: Webデータ収集}
+- {slug: testing, name: テスト自動化}
+- {slug: docs, name: 文書のデータ化}
+- {slug: sync, name: ファイル共有・同期}
+- {slug: eval, name: LLMの評価・監視}
+- {slug: coding, name: AIコーディング}
+- {slug: sdd, name: 仕様駆動開発}
+- {slug: writing, name: 文章の手直し}
+- {slug: sns, name: SNS運用}
+- {slug: api, name: API探し}
