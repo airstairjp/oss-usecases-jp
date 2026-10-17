@@ -1,25 +1,41 @@
-# カテゴリ定義（slug: 表示名と説明）。projects/*.yaml の category はここの slug を使う。
+# カテゴリ定義（slug・表示名・アイコン用の1文字 mark・カテゴリ色 color・説明）。projects/*.yaml の category はここの slug を使う。
 - slug: ai-app
   name: AIアプリ基盤・チャットUI
+  mark: 基
+  color: "#2f5bd3"
   description: 社内チャットボットやRAGアプリを、画面操作中心で組み立てて自前で運用するためのOSS。
 - slug: local-llm
   name: ローカルLLM
+  mark: 端
+  color: "#6b4fbb"
   description: 手元のPCや自社サーバーでLLMを動かし、データを外に出さずに使うためのOSS。
 - slug: workflow
   name: 業務自動化・ワークフロー
+  mark: 流
+  color: "#0b7a5a"
   description: SaaS同士の連携や定型業務を、ノードやフローをつないで自動化するOSS。
 - slug: web-data
   name: ブラウザ自動化・Webデータ取得
+  mark: 網
+  color: "#c2410c"
   description: AIにブラウザを操作させたり、WebページをAIが読みやすい形に変換したりするOSS。
 - slug: dev
   name: 開発支援・AIコーディング
+  mark: 開
+  color: "#1f2a44"
   description: コーディングエージェントの使い方を整えたり、LLMアプリの品質を測ったりする開発者向けOSS。
 - slug: docs
   name: 文書処理
+  mark: 文
+  color: "#a16207"
   description: PDFやOffice文書をAIで扱える形（Markdown・JSON）に変換するOSS。
 - slug: content
   name: コンテンツ制作・SNS運用
+  mark: 発
+  color: "#be185d"
   description: 文章の手直しやSNS投稿の予約など、発信まわりの作業を助けるOSS。
 - slug: infra
   name: 業務インフラ・ファイル共有
+  mark: 盤
+  color: "#0e7490"
   description: ファイル同期など、日々の業務を支える基盤系のOSS。
