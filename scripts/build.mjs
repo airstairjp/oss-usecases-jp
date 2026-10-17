@@ -212,7 +212,6 @@ for (const p of projects) {
   const casesHtml = p.cases.length
     ? p.cases.map((c) => `<div class="case"><h3>${esc(c.title)}</h3><p>${esc(c.summary)}</p><span class="src"><b>出典</b><a href="${esc(c.source.url)}" rel="noopener" target="_blank">${esc(c.source.name || c.source.url)}</a></span></div>`).join('') + '<p class="note">※ 事例の数値は、出典元（提供元の導入事例や利用者の記事）による発表・報告です。当サイトでの検証はしていません。</p>'
     : `<p class="callout">事例未収集：出典を確認できる活用事例をまだ集められていません。見つかり次第追加します。</p>`;
-  const refsHtml = (p.refs || []).length ? `<h3 style="font-size:.95rem;margin:16px 0 6px">参考（紹介記事・投稿。活用事例ではありません）</h3><ul>${p.refs.map((r) => `<li><a href="${esc(r.url)}" rel="noopener" target="_blank">${esc(r.name)}</a></li>`).join('')}</ul>` : '';
   const desc = `${p.name}（${p.repo}）の日本語解説：${p.tagline}。向いている用途、出典つきの活用事例、導入の手軽さ、ライセンス、GitHubスター数をまとめています。`;
   const ld = [
     { '@context': 'https://schema.org', '@type': 'SoftwareSourceCode', name: p.name, description: p.tagline, codeRepository: `https://github.com/${p.repo}`, url: abs(`/projects/${p.slug}/`), ...(p.homepage ? { sameAs: p.homepage } : {}), license: p.license.spdx && !['NOASSERTION', 'none'].includes(p.license.spdx) ? `https://spdx.org/licenses/${p.license.spdx}.html` : undefined, inLanguage: 'ja', dateModified: fmtDate(p.checked || p.added), interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/LikeAction', userInteractionCount: p.github.stars, description: `GitHub stars (${fetched} 取得)` } },
@@ -230,7 +229,7 @@ for (const p of projects) {
 <section class="block"><h2>何ができるか</h2><p>${esc(p.what)}</p></section>
 <section class="block"><h2>向いている用途</h2><ul class="ticks">${p.goodFor.map((g) => `<li>${esc(g)}</li>`).join('')}</ul>
 ${p.notFor?.length ? `<h3 style="font-size:.95rem;margin:18px 0 8px">向いていない場面</h3><ul class="ticks ng">${p.notFor.map((g) => `<li>${esc(g)}</li>`).join('')}</ul>` : ''}</section>
-<section class="block"><h2>実際の使われ方（活用事例）</h2>${casesHtml}${refsHtml}</section>
+<section class="block"><h2>実際の使われ方（活用事例）</h2>${casesHtml}</section>
 <section class="block"><h2>導入の手軽さ</h2><p>${dots(p.ease.level)} <strong>${EASE[p.ease.level]}</strong> — ${esc(p.ease.text)}</p>
 ${p.ease.install ? `<pre><code>${esc(p.ease.install)}</code></pre><p class="note">※ 代表的な導入コマンドの例です。最新の手順は公式ドキュメントを確認してください。</p>` : ''}</section>
 <section class="block"><h2>ライセンス</h2><p><strong>${esc(p.license.name)}</strong>${p.license.spdx && p.license.spdx !== 'NOASSERTION' ? `（SPDX: ${esc(p.license.spdx)}）` : ''}。${esc(p.license.note || '')}</p><p class="note">ライセンスの説明は要点のみです。利用前にリポジトリのLICENSEファイル原文を確認してください。</p></section>

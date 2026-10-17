@@ -22,7 +22,7 @@ public/                dist/ にそのままコピーするファイル
 
 1. 既存の `projects/*.yaml` をコピーして `projects/<slug>.yaml` を作る（slug は英小文字・数字・ハイフン）。
 2. 必須: `slug, name, repo(owner/name), category, uses, tagline, what, goodFor, ease{level 1-5, text, install?}, license{spdx, name, note}, added`。任意: `homepage, notFor, refs, checked`。
-3. `cases:` は出典URL必須（`source: {name, url}`）。出典を確認できる事例がなければ `cases: []` にする（ページに「事例未収集」と出る）。紹介投稿など事例でないものは `refs:` に入れる。
+3. `cases:` は出典URL必須（`source: {name, url}`）。出典を確認できる事例がなければ `cases: []` にする（ページに「事例未収集」と出る）。紹介投稿など事例でないものは出典管理用に `refs:` に入れられる（公開ページには表示しない）。
 4. 本文は自分の言葉で要約（丸写ししない）。数値は「出典元の発表」として書く。
 5. `node scripts/update-stars.mjs <slug>` で github: ブロック（スター数・最終push・取得日）を追記。
 6. `npm run build` でエラーがないことを確認 → デプロイ。
