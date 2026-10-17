@@ -42,7 +42,8 @@ if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 projects.sort((a, b) => (b.github?.stars || 0) - (a.github?.stars || 0));
 
 // ---------- helpers ----------
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// YAMLの折り返し（>-）で日本語の間に入る半角スペースを除去してからエスケープ
+const esc = (s) => String(s ?? '').replace(/([^\x00-\x7F])[ ]+(?=[^\x00-\x7F])/g, '$1').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const abs = (p) => site.url + p;
 const fmtNum = (n) => Number(n).toLocaleString('en-US');
 const fmtDate = (d) => { const s = d instanceof Date ? d.toISOString().slice(0, 10) : String(d); return s.replace(/^(\d{4})-(\d{2})-(\d{2}).*$/, '$1-$2-$3'); };
