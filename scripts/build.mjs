@@ -144,9 +144,8 @@ table.idx{width:100%;border-collapse:separate;border-spacing:0;font-size:.9rem;b
 .foot .wrap{display:grid;gap:18px}@media (min-width:800px){.foot .wrap{grid-template-columns:1.4fr 1fr}}
 .foot nav{display:flex;flex-wrap:wrap;gap:6px 16px;align-content:start}.foot a{color:var(--sub)}.foot .sis{margin-top:10px}
 `;
-// ロゴ: OSS＝コードの山かっこ＋スター（姉妹サイトの社員証ロゴとは別物）
-const LOGO = `<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="8" fill="currentColor"/><path d="M11 11l-5 5 5 5M21 11l5 5-5 5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 11.2l1.4 2.9 3.1.4-2.3 2.2.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.2 3.1-.4z" fill="#fff"/></svg>`;
-const FAVICON = `data:image/svg+xml,${encodeURIComponent(LOGO.replace('currentColor', '#0b7a5a').replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))}`;
+// ロゴ: 緑円に角丸の白い五芒星（アイコン案17）。姉妹サイトの社員証／ロボットロゴとは別物
+const LOGO = `<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="currentColor"/><path fill="#fff" d="M 15.3906 8.8137 Q 16.0000 7.1840 16.6094 8.8137 L 17.6584 11.6192 Q 18.1764 13.0044 19.6539 13.0690 L 22.6462 13.1998 Q 24.3845 13.2757 23.0229 14.3589 L 20.6789 16.2235 Q 19.5215 17.1442 19.9167 18.5694 L 20.7170 21.4556 Q 21.1819 23.1323 19.7310 22.1720 L 17.2333 20.5190 Q 16.0000 19.7027 14.7667 20.5190 L 12.2690 22.1720 Q 10.8181 23.1323 11.2830 21.4556 L 12.0833 18.5694 Q 12.4785 17.1442 11.3211 16.2235 L 8.9771 14.3589 Q 7.6155 13.2757 9.3538 13.1998 L 12.3461 13.0690 Q 13.8236 13.0044 14.3416 11.6192 Z"/></svg>`;
 const avatar = (cat, size = 56) => `<svg class="av" width="${size}" height="${size}" viewBox="0 0 56 56" aria-hidden="true"><rect x="1" y="1" width="54" height="54" rx="14" fill="${esc(cat.color)}"/><path d="M14 20l-5 8 5 8M42 20l5 8-5 8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/><text x="28" y="35.5" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="'Hiragino Sans','Noto Sans JP','Noto Sans CJK JP',sans-serif">${esc(cat.mark)}</text></svg>`;
 const dots = (n) => `<span class="dots" aria-label="5段階中${n}">${'●'.repeat(n)}${'○'.repeat(5 - n)}</span>`;
 const short = (s, n = 48) => { const t = String(s).replace(/\s+/g, ''); return t.length > n ? t.slice(0, n) + '…' : t; };
@@ -160,8 +159,8 @@ function layout({ title, description, pathName, body, jsonld = [], nav = '' }) {
   return `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
-<link rel="canonical" href="${abs(pathName)}"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)"><link rel="icon" href="${FAVICON}">
-<meta property="og:type" content="${pathName.startsWith('/projects/') && pathName !== '/projects/' ? 'article' : 'website'}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${abs(pathName)}"><meta property="og:site_name" content="${esc(site.name)}"><meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary">
+<link rel="canonical" href="${abs(pathName)}"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="${pathName.startsWith('/projects/') && pathName !== '/projects/' ? 'article' : 'website'}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${abs(pathName)}"><meta property="og:site_name" content="${esc(site.name)}"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="${abs('/logo.png')}"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="${abs('/logo.png')}">
 <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
 <style>${CSS.replace(/\n/g, '')}</style>
 ${ld}
@@ -306,7 +305,7 @@ ${sponsorSlot('h2')}
 <li class="dept" style="--c:var(--accent)"><div><h3>取得日つきの数値</h3><p>GitHubスター数・最終更新日はGitHub APIから取得し、取得日を併記しています。</p></div></li>
 <li class="dept" style="--c:var(--accent)"><div><h3>導入の手軽さ</h3><p>公式の導入手順をもとに、5段階（●の数）で目安を示しています。</p></div></li>
 <li class="dept" style="--c:var(--accent)"><div><h3>ライセンスの要点</h3><p>商用利用の条件や、OSI定義外の「ソース公開型」かどうかを明記しています。</p></div></li></ul></section>`;
-  const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs('/'), description: site.description, inLanguage: 'ja' }, itemListLd('掲載中のOSS', newest)];
+  const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs('/'), description: site.description, inLanguage: 'ja', publisher: { '@type': 'Organization', name: site.name, url: abs('/'), logo: { '@type': 'ImageObject', url: abs('/logo.png') } } }, itemListLd('掲載中のOSS', newest)];
   write('index.html', layout({ title: site.name, description: site.description, pathName: '/', body, jsonld: ld }));
 }
 
