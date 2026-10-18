@@ -26,7 +26,7 @@ GREEN = (11, 122, 90)  # #0b7a5a
 PAPER = (255, 255, 255)
 LINE = (225, 228, 218)
 WHITE = (255, 255, 255)
-TEMPLATE_VER = "ogp-v1"
+TEMPLATE_VER = "ogp-v2"
 
 SERIF_BOLD = "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc"
 SERIF_REG = "/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"
@@ -96,48 +96,6 @@ def fmt_num(n) -> str:
     return f"{int(n):,}"
 
 
-def star_logo(size: int = 64) -> Image.Image:
-    """Green circle + rounded white 5-point star (concept 17)."""
-    VB = 32
-    CIRCLE_R = 15.2
-    STAR_OUTER = CIRCLE_R * 0.58
-    STAR_INNER = STAR_OUTER * 0.42
-    ROUNDNESS = 0.28
-    hi = max(size * 4, 256)
-    himg = Image.new("RGBA", (hi, hi), (0, 0, 0, 0))
-    hd = ImageDraw.Draw(himg)
-    s = hi / VB
-    pad = (VB / 2 - CIRCLE_R) * s
-    hd.ellipse((pad, pad, hi - pad, hi - pad), fill=GREEN + (255,))
-    cx = cy = VB / 2 * s
-    outer, inner = STAR_OUTER * s, STAR_INNER * s
-    verts = []
-    for i in range(10):
-        ang = math.radians(-90 + i * 18)
-        r = outer if i % 2 == 0 else inner
-        verts.append((cx + r * math.cos(ang), cy + r * math.sin(ang)))
-    pts = []
-    m = len(verts)
-    for i in range(m):
-        prev, cur, nxt = verts[(i - 1) % m], verts[i], verts[(i + 1) % m]
-        d0 = math.hypot(cur[0] - prev[0], cur[1] - prev[1]) or 1
-        d1 = math.hypot(nxt[0] - cur[0], nxt[1] - cur[1]) or 1
-        rfrac = ROUNDNESS if i % 2 == 0 else ROUNDNESS * 0.85
-        t0 = min(rfrac, 0.45) * d0
-        t1 = min(rfrac, 0.45) * d1
-        ax = cur[0] - (cur[0] - prev[0]) / d0 * t0
-        ay = cur[1] - (cur[1] - prev[1]) / d0 * t0
-        bx = cur[0] + (nxt[0] - cur[0]) / d1 * t1
-        by = cur[1] + (nxt[1] - cur[1]) / d1 * t1
-        for t in range(16):
-            u = t / 16
-            x = (1 - u) ** 2 * ax + 2 * (1 - u) * u * cur[0] + u ** 2 * bx
-            y = (1 - u) ** 2 * ay + 2 * (1 - u) * u * cur[1] + u ** 2 * by
-            pts.append((x, y))
-    hd.polygon(pts, fill=WHITE + (255,))
-    return himg.resize((size, size), Image.Resampling.LANCZOS)
-
-
 def fingerprint(payload: dict) -> str:
     raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
@@ -157,42 +115,133 @@ def save_png(img: Image.Image, path: Path) -> int:
     return path.stat().st_size
 
 
-def draw_default(site: dict, count: int, fonts: dict) -> Image.Image:
+def star_logo(size: int = 64) -> Image.Image:
+    """Green circle + rounded white 5-point star — same geometry as favicon.svg."""
+    VB = 32
+    CIRCLE_R = 15.2
+    STAR_OUTER = CIRCLE_R * 0.58
+    STAR_INNER = STAR_OUTER * 0.42
+    ROUNDNESS = 0.28
+    hi = max(size * 8, 512)
+    himg = Image.new("RGBA", (hi, hi), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(himg)
+    s = hi / VB
+    pad = (VB / 2 - CIRCLE_R) * s
+    hd.ellipse((pad, pad, hi - pad, hi - pad), fill=GREEN + (255,))
+    cx = cy = VB / 2 * s
+    outer, inner = STAR_OUTER * s, STAR_INNER * s
+    verts = []
+    for i in range(10):
+        ang = math.radians(-90 + i * 36)  # 10 vertices, 36° apart
+        r = outer if i % 2 == 0 else inner
+        verts.append((cx + r * math.cos(ang), cy + r * math.sin(ang)))
+    pts = []
+    m = len(verts)
+    for i in range(m):
+        prev, cur, nxt = verts[(i - 1) % m], verts[i], verts[(i + 1) % m]
+        d0 = math.hypot(cur[0] - prev[0], cur[1] - prev[1]) or 1
+        d1 = math.hypot(nxt[0] - cur[0], nxt[1] - cur[1]) or 1
+        rfrac = ROUNDNESS if i % 2 == 0 else ROUNDNESS * 0.85
+        t0 = min(rfrac, 0.45) * d0
+        t1 = min(rfrac, 0.45) * d1
+        ax = cur[0] - (cur[0] - prev[0]) / d0 * t0
+        ay = cur[1] - (cur[1] - prev[1]) / d0 * t0
+        bx = cur[0] + (nxt[0] - cur[0]) / d1 * t1
+        by = cur[1] + (nxt[1] - cur[1]) / d1 * t1
+        for k in range(17):
+            u = k / 16
+            pts.append(((1 - u) ** 2 * ax + 2 * (1 - u) * u * cur[0] + u ** 2 * bx,
+                        (1 - u) ** 2 * ay + 2 * (1 - u) * u * cur[1] + u ** 2 * by))
+    hd.polygon(pts, fill=WHITE + (255,))
+    return himg.resize((size, size), Image.Resampling.LANCZOS)
+
+
+CARD = (56, 56, W - 56, H - 56)
+PADX = 104  # left text x inside card
+RIGHT = W - 104
+
+
+def put(d, x, y, text, fnt, fill):
+    """Draw text with its visual top at y; return visual bottom."""
+    bb = d.textbbox((x, y), text, font=fnt)
+    off = bb[1] - y
+    d.text((x, y - off), text, font=fnt, fill=fill)
+    return y + (bb[3] - bb[1])
+
+
+def pill(d, x, y, text, fnt, bg, fg, padx=20, pady=12, radius=None):
+    bb = d.textbbox((0, 0), text, font=fnt)
+    tw, th = bb[2] - bb[0], bb[3] - bb[1]
+    w, h = tw + padx * 2, th + pady * 2
+    r = radius if radius is not None else h // 2
+    d.rounded_rectangle((x, y, x + w, y + h), radius=r, fill=bg)
+    d.text((x + padx - bb[0], y + pady - bb[1]), text, font=fnt, fill=fg)
+    return x + w, y + h
+
+
+def base_canvas(accent):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
-    # left accent bar
-    d.rectangle((0, 0, 14, H), fill=GREEN)
-    # soft paper card
-    d.rounded_rectangle((56, 56, W - 56, H - 56), radius=28, fill=PAPER, outline=LINE, width=2)
-    # logo + site name
-    logo = star_logo(56)
-    img.paste(logo, (96, 92), logo)
-    d.text((168, 102), site["name"], font=fonts["site"], fill=GREEN)
-    # eyebrow
-    d.text((96, 180), "OPEN SOURCE USE CASES", font=fonts["eyebrow"], fill=SUB)
-    # headline (2 lines like site hero)
-    line1 = "OSSの実際の使われ方が"
+    d.rectangle((0, 0, 14, H), fill=accent)
+    d.rounded_rectangle(CARD, radius=28, fill=PAPER, outline=LINE, width=2)
+    return img, d
+
+
+def brand_row(img, d, site, logo_size, fnt, y):
+    logo = star_logo(logo_size)
+    img.paste(logo, (PADX, y), logo)
+    bb = d.textbbox((0, 0), site["name"], font=fnt)
+    th = bb[3] - bb[1]
+    put(d, PADX + logo_size + 16, y + (logo_size - th) // 2, site["name"], fnt, GREEN)
+    return y + logo_size
+
+
+def footer_url(d, site, fnt):
+    url = site.get("url", "").replace("https://", "")
+    bb = d.textbbox((0, 0), url, font=fnt)
+    th = bb[3] - bb[1]
+    y = CARD[3] - 36 - th
+    put(d, PADX, y, url, fnt, SUB)
+    return y
+
+
+def fit_font(d, text, path, idx, sizes, max_w):
+    for s in sizes:
+        f = font(path, s, idx)
+        if d.textlength(text, font=f) <= max_w:
+            return f, False
+    return font(path, sizes[-1], idx), True
+
+
+def ellipsize(d, text, fnt, max_w):
+    if d.textlength(text, font=fnt) <= max_w:
+        return text
+    while text and d.textlength(text + "…", font=fnt) > max_w:
+        text = text[:-1]
+    return text + "…"
+
+
+def draw_default(site: dict, count: int, fonts: dict) -> Image.Image:
+    img, d = base_canvas(GREEN)
+    y = brand_row(img, d, site, 56, fonts["site"], 96)
+    y = put(d, PADX, y + 40, "OPEN SOURCE USE CASES", fonts["eyebrow"], SUB)
+    title = fonts["title"]
+    y = put(d, PADX, y + 30, "OSSの実際の使われ方が", title, INK)
+    # line 2 with pale marker band under lower 40% (drawn before text)
     line2 = "一目でわかる事例集"
-    d.text((96, 230), line1, font=fonts["title"], fill=INK)
-    # underline accent on line2 like site em
-    tw, th = text_size(d, line2, fonts["title"])
-    y2 = 230 + 78
-    d.rectangle((96, y2 + th - 8, 96 + tw, y2 + th + 4), fill=(11, 122, 90, 40))
-    # emulate highlight: draw pale green rect then text
-    highlight = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    hd = ImageDraw.Draw(highlight)
-    hd.rectangle((96, y2 + th - 14, 96 + tw + 8, y2 + th + 2), fill=(11, 122, 90, 55))
-    img = Image.alpha_composite(img.convert("RGBA"), highlight).convert("RGB")
+    y2 = y + 22
+    bb = d.textbbox((PADX, y2), line2, font=title)
+    gh = bb[3] - bb[1]
+    over = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(over).rectangle((bb[0] - 4, y2 + int(gh * 0.62), bb[2] + 4, y2 + gh + 6), fill=GREEN + (48,))
+    img = Image.alpha_composite(img.convert("RGBA"), over).convert("RGB")
     d = ImageDraw.Draw(img)
-    d.text((96, y2), line2, font=fonts["title"], fill=INK)
-    # count chip
+    put(d, PADX, y2, line2, title, INK)
+    url_y = footer_url(d, site, fonts["meta"])
     chip = f"掲載 {count} プロジェクト"
-    cw, ch = text_size(d, chip, fonts["chip"])
-    cx0, cy0 = 96, H - 140
-    d.rounded_rectangle((cx0, cy0, cx0 + cw + 36, cy0 + ch + 24), radius=999, fill=GREEN)
-    d.text((cx0 + 18, cy0 + 10), chip, font=fonts["chip"], fill=WHITE)
-    # footer url
-    d.text((96, H - 78), site.get("url", "").replace("https://", ""), font=fonts["meta"], fill=SUB)
+    bbc = d.textbbox((0, 0), chip, font=fonts["chip"])
+    ch = (bbc[3] - bbc[1]) + 28
+    pill(d, PADX, url_y - 24 - ch, chip, fonts["chip"], GREEN, WHITE, padx=24, pady=14, radius=14)
     return img
 
 
@@ -204,48 +253,49 @@ def parse_color(hex_color: str) -> tuple[int, int, int]:
 
 
 def draw_project(site: dict, p: dict, cat: dict, fonts: dict) -> Image.Image:
-    img = Image.new("RGB", (W, H), BG)
-    d = ImageDraw.Draw(img)
     accent = parse_color(cat.get("color") or "#0b7a5a")
-    d.rectangle((0, 0, 14, H), fill=accent)
-    d.rounded_rectangle((56, 56, W - 56, H - 56), radius=28, fill=PAPER, outline=LINE, width=2)
-    # top brand
-    logo = star_logo(44)
-    img.paste(logo, (96, 84), logo)
-    d.text((156, 92), site["name"], font=fonts["meta"], fill=GREEN)
-    # category chip
-    cat_name = cat.get("name") or ""
-    cw, ch = text_size(d, cat_name, fonts["chip"])
-    d.rounded_rectangle((96, 160, 96 + cw + 28, 160 + ch + 18), radius=10, fill=accent)
-    d.text((110, 168), cat_name, font=fonts["chip"], fill=WHITE)
-    # project name — pick font size by length
+    img, d = base_canvas(accent)
+    maxw = RIGHT - PADX
+    top = brand_row(img, d, site, 44, fonts["meta"], 88)
+    # category badge
+    _, y = pill(d, PADX, top + 26, ellipsize(d, cat.get("name") or "", fonts["chip"], maxw - 40), fonts["chip"], accent, WHITE, padx=16, pady=9, radius=10)
+    # name: shrink then ellipsize, one line
     name = str(p["name"])
-    name_font = fonts["name"] if len(name) <= 18 else fonts["name_sm"]
-    # wrap name if needed
-    name_lines = wrap_jp(d, name, name_font, W - 200, max_lines=2)
-    y = 220
-    for ln in name_lines:
-        d.text((96, y), ln, font=name_font, fill=INK)
-        y += text_size(d, ln, name_font)[1] + 8
-    # repo
-    d.text((96, y + 6), f"github.com/{p['repo']}", font=fonts["repo"], fill=SUB)
-    y += 48
-    # tagline
-    for ln in wrap_jp(d, p.get("tagline") or "", fonts["body"], W - 200, max_lines=2):
-        d.text((96, y), ln, font=fonts["body"], fill=INK)
-        y += 40
-    # stars row
-    stars = p.get("github") or {}
-    star_n = stars.get("stars", 0)
-    fetched = stars.get("fetchedAt")
+    nf, over = fit_font(d, name, SERIF_BOLD, SERIF_IDX, [76, 68, 60, 52, 46] if len(name) <= 12 else [60, 54, 48, 44], maxw)
+    if over:
+        name = ellipsize(d, name, nf, maxw)
+    y = put(d, PADX, y + 30, name, nf, INK)
+    y = put(d, PADX, y + 16, ellipsize(d, f"github.com/{p['repo']}", fonts["repo"], maxw), fonts["repo"], SUB)
+    # footer stack from bottom
+    url_y = footer_url(d, site, fonts["meta"])
+    gh = p.get("github") or {}
+    fetched = gh.get("fetchedAt")
     if hasattr(fetched, "isoformat"):
-        fetched = fetched.isoformat()[:10]
+        fetched = fetched.isoformat()
     fetched = str(fetched)[:10] if fetched else ""
-    star_line = f"★ {fmt_num(star_n)}"
-    if fetched:
-        star_line += f"　取得 {fetched}"
-    d.text((96, H - 120), star_line, font=fonts["body_sm"], fill=GREEN)
-    d.text((96, H - 78), site.get("url", "").replace("https://", ""), font=fonts["meta"], fill=SUB)
+    star_line = f"★ {fmt_num(gh.get('stars', 0))}" + (f"   取得 {fetched}" if fetched else "")
+    bbs = d.textbbox((0, 0), star_line, font=fonts["body_sm"])
+    star_y = url_y - 16 - (bbs[3] - bbs[1])
+    put(d, PADX, star_y, star_line, fonts["body_sm"], GREEN)
+    # tagline between repo and star row: 2 lines body -> 2 lines small -> 1 line with ellipsis
+    tag = p.get("tagline") or ""
+    ty0, limit = y + 22, star_y - 22
+    def block(fnt, n, gap):
+        ls = wrap_jp(d, tag, fnt, maxw, max_lines=n)
+        hs = [d.textbbox((0, 0), ln, font=fnt)[3] - d.textbbox((0, 0), ln, font=fnt)[1] for ln in ls]
+        return ls, sum(hs) + gap * (len(ls) - 1)
+    chosen = None
+    for fnt, gap in ((fonts["body"], 14), (fonts["body_sm"], 10)):
+        ls, h = block(fnt, 2, gap)
+        if ty0 + h <= limit:
+            chosen = (ls, fnt, gap)
+            break
+    if chosen is None:
+        chosen = ([ellipsize(d, re.sub(r"\s+", " ", tag), fonts["body"], maxw)], fonts["body"], 0)
+    ls, fnt, gap = chosen
+    ty = ty0
+    for ln in ls:
+        ty = put(d, PADX, ty, ln, fnt, INK) + gap
     return img
 
 
