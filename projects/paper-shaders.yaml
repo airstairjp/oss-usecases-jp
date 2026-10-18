@@ -1,0 +1,35 @@
+slug: paper-shaders
+name: Paper Shaders
+repo: paper-design/shaders
+homepage: https://shaders.paper.design
+category: content
+uses:
+- writing
+- coding
+tagline: 依存なしのキャンバスシェーダーで、動く背景や光の効果をサイトに足せるライブラリ
+what: >-
+  HTMLキャンバス上で動くメッシュグラデーションやドット軌道など、軽い視覚効果を提供するシェーダー集。
+  React用パッケージと素のJS用パッケージがあり、npmから入れるほか、Paperの編集ツールで見た目を整えてコードを書き出すこともできる。
+  追加の重い依存を増やさず、ヒーロー背景やマスク付きのテクスチャ演出を足したいときに使う。
+goodFor:
+- LPのヒーロー背景に、軽量な動くグラデーションやテクスチャを足したいとき
+- デザインツールで見た目を決めてから、そのままコードへ書き出したいとき
+- Reactでも素のHTMLでも、同じ系統の背景演出を使いたいとき
+ease:
+  level: 4
+  text: npmで入れてコンポーネントを置くだけ。色や速度はpropsで調整できる。破壊的変更があり得るのでバージョン固定が推奨。
+  install: npm i @paper-design/shaders-react
+license:
+  spdx: Apache-2.0
+  name: Apache License 2.0
+  note: 利用・改変・再配布が自由（著作権表示・ライセンス文の同梱、変更点の明示が必要）。特許の利用許諾も含む。
+cases: []
+refs:
+- name: "@so_ainsight の紹介投稿（2026-10-17・UI設計・演出リポジトリ8選）"
+  url: https://x.com/so_ainsight/status/2111338935742079368
+added: "2026-10-19"
+checked: "2026-10-19"
+github:
+  stars: 3768
+  pushedAt: 2026-10-17
+  fetchedAt: 2026-10-19

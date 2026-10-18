@@ -162,7 +162,7 @@ function layout({ title, description, pathName, body, jsonld = [], nav = '', ogI
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${abs(pathName)}"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="${pathName.startsWith('/projects/') && pathName !== '/projects/' ? 'article' : 'website'}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${abs(pathName)}"><meta property="og:site_name" content="${esc(site.name)}"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="${abs(ogImage)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(ogAlt || fullTitle)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${abs(ogImage)}"><meta name="twitter:image:alt" content="${esc(ogAlt || fullTitle)}">
-<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt"><link rel="alternate" type="application/atom+xml" title="新着OSS（Atom）" href="/feed.xml">
 <style>${CSS.replace(/\n/g, '')}</style>
 ${ld}
 </head><body><a class="skip" href="#main">本文へスキップ</a>
@@ -171,7 +171,7 @@ ${ld}
 <main id="main" class="wrap">${body}</main>
 <footer class="foot"><div class="wrap"><div><strong style="color:var(--ink)">${esc(site.name)}</strong><p style="margin:6px 0 0">${esc(site.tagline)}。紹介文は当サイトが独自に要約したものです。GitHubスター数・最終更新日はGitHub APIから取得し、取得日を併記しています。事例の数値は出典元の発表・報告です。</p>
 <p class="sis">姉妹サイト：${(site.sister || []).map((s) => `<a href="${esc(s.url)}">${esc(s.name)}</a>`).join(' / ')}</p></div>
-<nav aria-label="フッター">${categories.filter((c) => projects.some((p) => p.category === c.slug)).map((c) => `<a href="/categories/${c.slug}/">${esc(c.name)}</a>`).join('')}<a href="/projects/">すべてのOSS</a><a href="/uses/">用途別</a><a href="/about/">編集方針</a><a href="/sponsor/">掲載のご相談</a><a href="/sitemap.xml">sitemap</a><a href="/llms.txt">llms.txt</a><span>最終更新 ${buildDate}</span></nav></div></footer>
+<nav aria-label="フッター">${categories.filter((c) => projects.some((p) => p.category === c.slug)).map((c) => `<a href="/categories/${c.slug}/">${esc(c.name)}</a>`).join('')}<a href="/projects/">すべてのOSS</a><a href="/uses/">用途別</a><a href="/about/">編集方針</a><a href="/sponsor/">掲載のご相談</a><a href="/sitemap.xml">sitemap</a><a href="/feed.xml">Atom</a><a href="/llms.txt">llms.txt</a><span>最終更新 ${buildDate}</span></nav></div></footer>
 </body></html>`;
 }
 
@@ -324,7 +324,7 @@ ${sponsorSlot('h2')}
 <li>「導入の手軽さ」は、公式の導入手順をもとにした当サイトの目安（5段階）です。</li>
 <li>ライセンスの説明は要点のみです。利用前に必ず原文を確認してください。なお、OSI定義のオープンソースではない「ソース公開型」のライセンスのプロジェクトも、その旨を明記して掲載しています。</li>
 </ul>
-<h2>AI・検索エンジン向け</h2><p><a href="/llms.txt">llms.txt</a>（サイトの要約）と <a href="/projects.json">projects.json</a>（掲載データ）を公開しています。</p>
+<h2>AI・検索エンジン向け</h2><p><a href="/llms.txt">llms.txt</a>（サイトの要約）、<a href="/projects.json">projects.json</a>（掲載データ）、<a href="/feed.xml">feed.xml</a>（新着・更新のAtomフィード）を公開しています。</p>
 <h2>掲載・修正のご相談</h2><p><a href="/sponsor/">掲載のご相談</a>のページをご覧ください。</p></div>`;
   write('about/index.html', layout({ title: 'このサイトについて・編集方針', description: `${site.name}の編集方針：出典つきの事例、取得日つきの数値、自分の言葉での要約。`, pathName: '/about/', body, nav: 'about', jsonld: [breadcrumbLd(crumbs)] }));
 }
@@ -346,10 +346,23 @@ pageList.pop();
 // projects.json
 write('projects.json', JSON.stringify({ site: site.name, url: site.url, generated: buildDate, count: projects.length, projects: projects.map((p) => ({ slug: p.slug, name: p.name, url: abs(`/projects/${p.slug}/`), repo: `https://github.com/${p.repo}`, category: catMap[p.category].name, uses: p.uses.map((u) => useMap[u].name), tagline: p.tagline, license: p.license.name, stars: p.github.stars, pushedAt: fmtDate(p.github.pushedAt), fetchedAt: fmtDate(p.github.fetchedAt), ease: EASE[p.ease.level], cases: p.cases.map((c) => ({ title: c.title, source: c.source.url })) })) }, null, 2));
 
+// Atom feed（新着・更新の発見用。SEO/購読向けの1改善）
+{
+  const byAdded = [...projects].sort((a, b) => fmtDate(b.added).localeCompare(fmtDate(a.added)) || (b.github.stars - a.github.stars)).slice(0, 30);
+  const updated = `${buildDate}T00:00:00+09:00`;
+  const entries = byAdded.map((p) => {
+    const url = abs(`/projects/${p.slug}/`);
+    const updatedP = `${fmtDate(p.checked || p.added)}T00:00:00+09:00`;
+    const summary = esc(`${p.tagline}（${catMap[p.category].name}／★${fmtNum(p.github.stars)}・${fmtDate(p.github.fetchedAt)}取得）`);
+    return `  <entry>\n    <title>${esc(p.name)}</title>\n    <link href="${url}" rel="alternate" type="text/html"/>\n    <id>${url}</id>\n    <updated>${updatedP}</updated>\n    <summary>${summary}</summary>\n    <category term="${esc(catMap[p.category].name)}"/>\n  </entry>`;
+  }).join('\n');
+  write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <title>${esc(site.name)} — 新着OSS</title>\n  <subtitle>${esc(site.tagline)}</subtitle>\n  <link href="${abs('/feed.xml')}" rel="self" type="application/atom+xml"/>\n  <link href="${abs('/')}" rel="alternate" type="text/html"/>\n  <id>${abs('/feed.xml')}</id>\n  <updated>${updated}</updated>\n  <author><name>${esc(site.name)}</name></author>\n${entries}\n</feed>\n`);
+}
+
 // sitemap / robots / llms.txt
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pageList.map((p) => { const proj = projects.find((q) => p === `/projects/${q.slug}/`); return `  <url><loc>${abs(p)}</loc><lastmod>${proj ? fmtDate(proj.checked || proj.added) : buildDate}</lastmod></url>`; }).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
-write('llms.txt', `# ${site.name}\n\n> ${site.description}\n\n掲載数: ${projects.length}件 / GitHubスター数の取得日: ${latestFetch} / 最終ビルド: ${buildDate}\n事例は出典URLつき。出典のない場合は「事例未収集」と記載。数値は出典元の発表であり当サイトでは未検証。\n\n## プロジェクト\n\n${projects.map((p) => `- [${p.name}](${abs(`/projects/${p.slug}/`)}): ${p.tagline}（${catMap[p.category].name}／★${fmtNum(p.github.stars)}・${fmtDate(p.github.fetchedAt)}取得／${p.license.name}／事例${p.cases.length ? p.cases.length + '件' : '未収集'}）`).join('\n')}\n\n## カテゴリ\n\n${categories.map((c) => `- [${c.name}](${abs(`/categories/${c.slug}/`)}): ${c.description}`).join('\n')}\n\n## 用途\n\n${uses.filter((u) => projects.some((p) => p.uses.includes(u.slug))).map((u) => `- [${u.name}](${abs(`/uses/${u.slug}/`)})`).join('\n')}\n\n## その他\n\n- [すべてのOSS一覧](${abs('/projects/')})\n- [このサイトについて・編集方針](${abs('/about/')})\n- [掲載データ（JSON）](${abs('/projects.json')})\n`);
+write('llms.txt', `# ${site.name}\n\n> ${site.description}\n\n掲載数: ${projects.length}件 / GitHubスター数の取得日: ${latestFetch} / 最終ビルド: ${buildDate}\n事例は出典URLつき。出典のない場合は「事例未収集」と記載。数値は出典元の発表であり当サイトでは未検証。\n\n## プロジェクト\n\n${projects.map((p) => `- [${p.name}](${abs(`/projects/${p.slug}/`)}): ${p.tagline}（${catMap[p.category].name}／★${fmtNum(p.github.stars)}・${fmtDate(p.github.fetchedAt)}取得／${p.license.name}／事例${p.cases.length ? p.cases.length + '件' : '未収集'}）`).join('\n')}\n\n## カテゴリ\n\n${categories.map((c) => `- [${c.name}](${abs(`/categories/${c.slug}/`)}): ${c.description}`).join('\n')}\n\n## 用途\n\n${uses.filter((u) => projects.some((p) => p.uses.includes(u.slug))).map((u) => `- [${u.name}](${abs(`/uses/${u.slug}/`)})`).join('\n')}\n\n## その他\n\n- [すべてのOSS一覧](${abs('/projects/')})\n- [このサイトについて・編集方針](${abs('/about/')})\n- [掲載データ（JSON）](${abs('/projects.json')})\n- [新着Atomフィード](${abs('/feed.xml')})\n`);
 
 const ogp = spawnSync('python3', [path.join(ROOT, 'scripts/generate_ogp.py'), '--root', ROOT, '--dist', DIST], { encoding: 'utf8', stdio: 'inherit' });
 if (ogp.status !== 0) { console.error('OGP generation failed'); process.exit(ogp.status || 1); }

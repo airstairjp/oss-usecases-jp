@@ -1,0 +1,34 @@
+slug: motion-primitives
+name: Motion Primitives
+repo: ibelick/motion-primitives
+homepage: https://motion-primitives.com
+category: content
+uses:
+- writing
+- coding
+tagline: 文字やボタンに、なめらかな動きを足せるReact向けのモーション部品集
+what: >-
+  Motion（旧Framer Motion）とTailwind CSSを前提に、ふわっと現れる文字・スライドするパネル・ホバー演出など、よく使うUIアニメーションを部品として揃えたライブラリ。
+  ドキュメントサイトからコピーして組み込める形で配布されており、コーディングエージェントに「この演出を当てて」と指示するときの共通語彙にもなりやすい。
+goodFor:
+- LPやダッシュボードの見出し・ボタンに、手書きせずに動きを足したいとき
+- Claude CodeやCodexにUIを作らせるとき、動きの指定を部品名で揃えたいとき
+- React／Next.jsの画面に、軽いマイクロインタラクションを足したいとき
+ease:
+  level: 4
+  text: npmで入れ、ドキュメントの部品をコピーしてTailwindクラスと組み合わせる。ReactとMotionの知識があると速い。
+  install: npm i motion motion-primitives
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: "@so_ainsight の紹介投稿（2026-10-17・UI設計・演出リポジトリ8選）"
+  url: https://x.com/so_ainsight/status/2111338935742079368
+added: "2026-10-19"
+checked: "2026-10-19"
+github:
+  stars: 6743
+  pushedAt: 2026-09-28
+  fetchedAt: 2026-10-19

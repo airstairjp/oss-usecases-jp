@@ -1,0 +1,35 @@
+slug: better-design
+name: Better Design
+repo: marvkr/better-design
+homepage: https://better-design.com
+category: dev
+uses:
+- coding
+- writing
+- agent
+tagline: AIコーディングエージェントに、デザインシステムとUIレビュー観点を渡すオープンなMCPサーバー
+what: >-
+  Claude Code、Cursor、GitHub CopilotなどMCP対応のコーディング環境向けに、配色・トークン・コンポーネント・使いやすさの確認項目を渡すデザインMCP。
+  LinearやStripe、Vercelなど有名プロダクト風のデザインシステムを複数用意し、エージェントが画面を作るときに「どの作法で作るか」と「出来栄えの自己点検」を揃えられる。
+  shadcn/ui向けのレジストリとしても使える。
+goodFor:
+- Claude CodeやCursorにUIを作らせるとき、無難で平凡な見た目を避けたいとき
+- 既存の有名プロダクトに近いトーンで、プロトタイプの見た目を揃えたいとき
+- 生成した画面を、コントラストやフォーカスなど最低限の観点でエージェントに見直させたいとき
+ease:
+  level: 3
+  text: MCPクライアントにサーバーを登録し、デザインシステムを選んでから画面作成を依頼する。Claude Code／Cursor向けの手順がドキュメントにある。
+license:
+  spdx: MIT
+  name: MIT License
+  note: 利用・改変・再配布が自由（著作権表示とライセンス文の同梱が必要）。
+cases: []
+refs:
+- name: "@so_ainsight の紹介投稿（2026-10-17・UI設計・演出リポジトリ8選）"
+  url: https://x.com/so_ainsight/status/2111338935742079368
+added: "2026-10-19"
+checked: "2026-10-19"
+github:
+  stars: 483
+  pushedAt: 2026-09-23
+  fetchedAt: 2026-10-19
