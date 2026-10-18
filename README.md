@@ -14,7 +14,7 @@ data/categories.yaml   カテゴリ定義
 data/uses.yaml         用途タグ定義
 data/site.yaml         サイト名・URL・姉妹サイト
 scripts/build.mjs      ビルド（必須項目・カテゴリ・用途・出典URLを検証）
-scripts/generate_ogp.py  OGP画像生成（Pillow、build から自動呼び出し）
+scripts/generate_ogp.py  OGP画像生成（HTML＋ヘッドレスChromium、build から自動呼び出し）
 scripts/update-stars.mjs  GitHub API でスター数・最終push日を更新（github: ブロックを書き換え）
 public/                dist/ にそのままコピーするファイル
 ```
@@ -31,15 +31,15 @@ public/                dist/ にそのままコピーするファイル
 
 ## OGP画像
 
-ビルド時に `scripts/generate_ogp.py`（Pillow）が 1200×630 のOG画像を生成する。
+姉妹サイト（AI社員名鑑）と同じ方式：HTMLテンプレートをヘッドレスChromium（Playwright）で撮影し、256色PNGに減色する。
+`scripts/generate_ogp.py` が `npm run build` の最後で自動実行される（VPSに導入済みの Python Playwright + Chromium を使用、追加インストール不要）。
 
-- サイト共通: `dist/ogp/default.png`（トップ・一覧・カテゴリ・用途・その他）
-- プロジェクト別: `dist/ogp/projects/<slug>.png`（名前・repo・一言・カテゴリ・★と取得日・ロゴ）
-- 指紋（内容ハッシュ）が同じなら `.ogp-cache/` から再利用（再生成しない）
-- フォント: システム同梱の Noto Serif/Sans CJK（追加インストール不要）
-- `.ogp-cache/` と `design/` は gitignore（画像バイナリはリポジトリに含めない）
-
-`npm run build` の最後で自動実行される。単体実行: `python3 scripts/generate_ogp.py`
+- サイト共通: `dist/ogp/default.png`（トップ・一覧・カテゴリ・用途・その他。ロゴ・キャッチ・掲載数）
+- プロジェクト別: `dist/ogp/projects/<slug>.png`（名前・owner/repo・一言紹介・カテゴリ・★と取得日・ロゴ）
+- デザイン: 緑 #0b7a5a 背景＋ドット柄＋円形の濃淡、白文字の太いゴシック、濃緑のピル（テンプレは `generate_ogp.py` 内の HTML/CSS）
+- 内容の指紋（テンプレ版数 `TEMPLATE_VER` を含む）が同じなら `.ogp-cache/` から再利用。新規プロジェクトやスター数更新の分だけ撮影される
+- テンプレを変えたら `TEMPLATE_VER` を上げる（全件撮り直し）。単体確認: `python3 scripts/generate_ogp.py --dist /tmp/ogp --only default n8n`
+- `.ogp-cache/` と `design/` は gitignore
 
 ## 毎朝のルーチン（VPS 上）
 
