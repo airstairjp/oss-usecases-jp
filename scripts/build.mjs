@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
 import yaml from 'js-yaml';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -151,7 +152,7 @@ const dots = (n) => `<span class="dots" aria-label="5段階中${n}">${'●'.repe
 const short = (s, n = 48) => { const t = String(s).replace(/\s+/g, ''); return t.length > n ? t.slice(0, n) + '…' : t; };
 const shortLicense = (p) => (p.license.spdx && !['NOASSERTION', 'none'].includes(p.license.spdx) ? p.license.spdx : p.license.name.replace(/（.*$/, ''));
 
-function layout({ title, description, pathName, body, jsonld = [], nav = '' }) {
+function layout({ title, description, pathName, body, jsonld = [], nav = '', ogImage = '/ogp/default.png', ogAlt = '' }) {
   pageList.push(pathName);
   const fullTitle = pathName === '/' ? `${site.name}｜${site.tagline}` : `${title}｜${site.name}`;
   const ld = jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n');
@@ -160,7 +161,7 @@ function layout({ title, description, pathName, body, jsonld = [], nav = '' }) {
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(fullTitle)}</title><meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${abs(pathName)}"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f6f7f3" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
-<meta property="og:type" content="${pathName.startsWith('/projects/') && pathName !== '/projects/' ? 'article' : 'website'}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${abs(pathName)}"><meta property="og:site_name" content="${esc(site.name)}"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="${abs('/logo.png')}"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="${abs('/logo.png')}">
+<meta property="og:type" content="${pathName.startsWith('/projects/') && pathName !== '/projects/' ? 'article' : 'website'}"><meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${abs(pathName)}"><meta property="og:site_name" content="${esc(site.name)}"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="${abs(ogImage)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(ogAlt || fullTitle)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${abs(ogImage)}"><meta name="twitter:image:alt" content="${esc(ogAlt || fullTitle)}">
 <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
 <style>${CSS.replace(/\n/g, '')}</style>
 ${ld}
@@ -243,7 +244,7 @@ ${p.ease.install ? `<pre><code>${esc(p.ease.install)}</code></pre><p class="note
 </article>
 ${sponsorSlot('h2')}
 <section class="sec"><div class="sec-h"><h2>${others.length ? `${esc(cat.name)}のほかのOSS` : '関連するOSS'}</h2><a href="${others.length ? `/categories/${cat.slug}/` : '/projects/'}">一覧へ →</a></div><ul class="cards">${related.map(card).join('') || '<li class="muted">まだありません。</li>'}</ul></section>`;
-  write(`projects/${p.slug}/index.html`, layout({ title: `${p.name}とは？使い方と活用事例`, description: desc, pathName: `/projects/${p.slug}/`, body, jsonld: ld }));
+  write(`projects/${p.slug}/index.html`, layout({ title: `${p.name}とは？使い方と活用事例`, description: desc, pathName: `/projects/${p.slug}/`, body, jsonld: ld, ogImage: `/ogp/projects/${p.slug}.png`, ogAlt: `${p.name}（${p.repo}）— ${site.name}` }));
 }
 
 // all projects
@@ -350,4 +351,6 @@ write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="htt
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 write('llms.txt', `# ${site.name}\n\n> ${site.description}\n\n掲載数: ${projects.length}件 / GitHubスター数の取得日: ${latestFetch} / 最終ビルド: ${buildDate}\n事例は出典URLつき。出典のない場合は「事例未収集」と記載。数値は出典元の発表であり当サイトでは未検証。\n\n## プロジェクト\n\n${projects.map((p) => `- [${p.name}](${abs(`/projects/${p.slug}/`)}): ${p.tagline}（${catMap[p.category].name}／★${fmtNum(p.github.stars)}・${fmtDate(p.github.fetchedAt)}取得／${p.license.name}／事例${p.cases.length ? p.cases.length + '件' : '未収集'}）`).join('\n')}\n\n## カテゴリ\n\n${categories.map((c) => `- [${c.name}](${abs(`/categories/${c.slug}/`)}): ${c.description}`).join('\n')}\n\n## 用途\n\n${uses.filter((u) => projects.some((p) => p.uses.includes(u.slug))).map((u) => `- [${u.name}](${abs(`/uses/${u.slug}/`)})`).join('\n')}\n\n## その他\n\n- [すべてのOSS一覧](${abs('/projects/')})\n- [このサイトについて・編集方針](${abs('/about/')})\n- [掲載データ（JSON）](${abs('/projects.json')})\n`);
 
+const ogp = spawnSync('python3', [path.join(ROOT, 'scripts/generate_ogp.py'), '--root', ROOT, '--dist', DIST], { encoding: 'utf8', stdio: 'inherit' });
+if (ogp.status !== 0) { console.error('OGP generation failed'); process.exit(ogp.status || 1); }
 console.log(`built ${projects.length} projects, ${pageList.length} pages -> dist/`);
